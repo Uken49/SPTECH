@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 2 - Display</title>
+</head>
+<body>
+    <h3>Mostra / esconde</h3>
+
+    <button onclick="mostrar()">Iniciar programa</button>
+    <button onclick="esconder()">Encerrar programa</button>
+
+    <!-- "display: none" deixa o elemento invisivel -->
+    <div id="div_programa" style="display: none;">
+        Este é o programa educativo 2.0 <br>
+        blá blá blá <br>
+        Aqui poderiam ter tags input, select, button educativo
+    </div>
+
+    <b id="b_texto1">Bom dia</b>
+    <b id="b_texto2">Boa tarde</b>
+    <b id="b_texto3">Boa noite</b>
+</body>
+</html>
+
+<script>
+    function mostrar() {
+        // "display: block" -> Deixa o elemento visivel e quebra linha
+        div_programa.style.display = 'block'
+        // "display: inline" -> Deixa o elemento visivel e NÃO quebra linha
+        b_texto1.style.display = 'inline'
+        b_texto2.style.display = 'inline'
+        b_texto3.style.display = 'inline'
+    }
+    function esconder() {
+        div_programa.style.display = 'none'
+        b_texto1.style.display = 'none'
+        b_texto2.style.display = 'none'
+        b_texto3.style.display = 'none'
+    }
+</script>

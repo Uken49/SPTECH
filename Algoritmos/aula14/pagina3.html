@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 3 - Operador AND</title>
+</head>
+
+<body>
+    <h3>Aprovado/Reprovado</h3>
+
+    <input placeholder="Média" id="in_media"> <br>
+    <input placeholder="Frequência" id="in_freq"> <br>
+    <input onkeyup="estagio()" placeholder="Semestre" id="in_semes"> <br>
+    <button onclick="avaliar()">Avaliar</button>
+</body>
+
+</html>
+
+<script>
+    function avaliar() {
+        var media = Number(in_media.value)
+        var freq = Number(in_freq.value)
+        var semes = Number(in_semes.value)
+
+        if (media >= 6 && freq >= 75) {
+            alert('Parabéns')
+
+        } else {
+            alert('Não foi dessa vez :(')
+        }
+    }
+    function estagio() {
+        var media = Number(in_media.value)
+        var freq = Number(in_freq.value)
+        var semes = Number(in_semes.value)
+
+        if (media >= 6 && freq >= 75 && semes >= 2) {
+            alert('Você já pode ir para o estágio')
+        }
+            if (media >= 6 && freq >= 75 && semes >= 2) {
+            alert('Você não pode ir para o estágio')
+        }
+        
+    }
+</script>
