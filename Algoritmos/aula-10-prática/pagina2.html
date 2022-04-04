@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 2 - Concatenar innerHTML </title>
+</head>
+<body>
+    <button onclick="legumes()">Comprar Legumes</button>
+    <button onclick="frutas()">Comprar Frutas</button>
+    <button onclick="carnes()">Comprar Carnes</button>
+    <button onclick="zerar()">Novo histórico</button>
+    <br>
+    <div id="div_historico"></div>
+</body>
+</html>
+
+<script>
+    // O += para o innerHTML apenas CONCATENA o valor com o que já estava antes
+    function legumes() {
+        div_historico.innerHTML += "Você comprou legumes<br>"
+    }
+    function frutas() {
+        div_historico.innerHTML += "Você comprou frutas<br>"
+    }
+    function carnes() {
+        div_historico.innerHTML += "Você comprou carnes<br>"
+    }
+    function zerar() {
+        div_historico.innerHTML = ""
+    }
+    
+</script>

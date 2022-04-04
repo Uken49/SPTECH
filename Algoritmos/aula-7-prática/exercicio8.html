@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 7</title>
+</head>
+<body>
+    Digite o 1º valor: <input id="num"><br>
+    Digite a razão da PG: <input id="q"><br>
+    Digite o termo da razão: <input id="n"><br>
+
+    <br><button onclick="pg()">Obter termo</button>
+    <p id="res"></p>
+</body>
+</html>
+
+<script>
+    function pg() {
+        res.innerHTML = `Valor: ${num.value}; razão: ${q.value}; termo que quer: ${n.value}; Resultado ${num.value*q.value ** (n.value-1)}`
+    }
+</script>

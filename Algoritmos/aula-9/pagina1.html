@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 20 - Atalhos matemáticos</title>
+</head>
+<body>
+    
+    <h3>Página 20 - Atalhos matemáticos</h3>
+
+    <!-- o "placeholder" é um texto que fica no input caso ele seja vazio -->
+    <input placeholder="Digite um número" id="in_numero">
+    <br>
+    <button onclick="aumentar1()">Aumentar em 1</button>
+    <button onclick="diminuir1()">Diminuir em 1</button>
+    <button onclick="aumentar5()">Aumentar em 5</button>
+    <button onclick="reduzir20()">Diminuir em 20</button>
+
+</body>
+</html>
+<script>
+function aumentar1() {
+    var numero = Number(in_numero.value)
+    // O operador ++ INCREMENTA em 1 um valor numérico
+    numero++
+    alert(numero)
+}   
+
+function diminuir1() {
+    var numero = Number(in_numero.value)
+    // O operador -- REDUZ em 1 um valor numérico
+    numero--
+    alert(numero)
+}   
+
+function aumentar5() {
+    var numero = Number(in_numero.value)
+    // O operador += INCREMENTA um valor numérico de acordo com o valor a direita
+    numero += 5
+    alert(numero)
+}   
+
+function reduzir20() {
+    var numero = Number(in_numero.value)
+    //numero += -20
+    // O operador -= REDUZ um valor numérico de acordo com o valor a direita
+    numero -= 20
+    alert(numero)
+}   
+
+</script>

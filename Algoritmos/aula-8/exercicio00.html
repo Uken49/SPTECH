@@ -1,0 +1,29 @@
+<!-- Código do PROFESSOR -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 06</title>
+</head>
+<body>
+    <h2>Questão 06</h2>
+
+    Salário bruto: <input id="in_bruto"> <br>
+
+    <button onclick="liquido()">Calcular Salário Líquido</button>
+    
+    <div id="div_salario" style="color: blue;"></div>
+
+</body>
+</html>
+<script>
+    
+    function liquido() {
+        div_salario.innerHTML = `
+        Apesar de seu bruto ser R$${in_bruto.value}, após os descontos, você receberá somente <span style="color:green">R$${Number(in_bruto.value) - Number(in_bruto.value)*0.10 - Number(in_bruto.value)*0.20 - Number(in_bruto.value)/30}</span>
+        `
+    }
+
+</script>

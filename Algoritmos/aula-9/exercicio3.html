@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 3</title>
+</head>
+<body>
+    Você já gastou com besteiras este mês: R$ <span id="qtdGasta">0.00</span><br>
+    <button onclick="comprarCafe()">Comprar Cafezinho</button>
+    <button onclick="comprarCasquinha()">Comprar Casquinha do Mc</button>
+    <button onclick="comprarBiscoito()">Comprar biscoito</button>
+</body>
+</html>
+
+<script>
+    var dinheiro = 0
+    function comprarCafe() {
+        dinheiro += 3.5
+        qtdGasta.innerHTML = dinheiro.toFixed(2)
+    }
+    function comprarCasquinha() {
+        dinheiro += 2.25
+        qtdGasta.innerHTML = dinheiro.toFixed(2)
+    }
+    function comprarBiscoito() {
+        dinheiro += 5.13
+        qtdGasta.innerHTML = dinheiro.toFixed(2)
+    }
+</script>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 15</title>
+</head>
+<body>
+    Digite a primeira nota: <input id="inp_nota1"> <br>
+    Digite a segunda nota: <input id="inp_nota2"> <br>
+    <button onclick="calcular()">Verificar situação</button>
+</body>
+</html>
+<script>
+    function calcular() {
+        var nota1 = Number(inp_nota1.value)
+        var nota2 = Number(inp_nota2.value)
+        var media = (nota1+nota2)/2
+
+        if (media >= 6) {
+            alert(`Parabéns,aprovado`)
+        }
+        if (media < 6) {
+            alert(`Tente outra vez...`)
+        }
+    }
+</script>
