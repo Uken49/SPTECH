@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 1 - MOD (%)</title>
+</head>
+<body>
+
+    <h2>Analisando um número</h2>
+    <input placeholder="Número qualquer" id="inp_numero">
+    <br>
+    <button onclick="multiplo5()">É múltiplo de 5?</button>
+    <button onclick="par_impar()">É par ou ímpar?</button>
+</body>
+</html>
+
+<script>
+    function multiplo5() {
+        var numero = Number(inp_numero.value)
+
+        if (numero%5 == 0) {
+            alert("Sim")
+        }else{
+            alert("Não")
+        }
+    }
+
+    function par_impar() {
+        var numero = Number(inp_numero.value)
+        
+        if (numero%2 == 0) {
+            alert("Sim")
+        }else{
+            alert("Não")
+        }
+    }
+</script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 1 - toFixed</title>
+</head>
+<body>
+    1º número: <input id="num1"><br>
+    2º número: <input id="num2"><br>
+
+    <br><button onclick="dividir()">Dividir</button>
+    <br><button onclick="potencia()">Elevar à potência</button>
+    <br><button onclick="raiz()">Calcular a raiz</button>
+    <p id="res"></p>
+</body>
+</html>
+
+<script>
+    function dividir() {
+        res.innerHTML = `A divisão dá ${(Number(num1.value) / Number(num2.value)).toFixed(3)}`
+    }
+    // (´número´).toFixed() define a quantidade de casas decimais de um número 
+
+    function potencia() {
+        res.innerHTML = `${num1.value} elevado a ${num2.value} dá ${num1.value ** num2.value}`   
+    }
+    // ** é a potência (asteristico duas vezes)
+
+    function raiz() {
+        res.innerHTML = `A raiz de ${num1.value} é ${num1.value ** (1/num2.value)}`   
+    }
+    // numero1 ** (1/numero2) é a mesma coisa que raiz quadrada
+</script>

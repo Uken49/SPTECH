@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 7</title>
+</head>
+
+<body>
+    Digite a renda familiar: <input id="inp_renda"> <br>
+    Digite o valor da prestação: <input id="inp_prestacao"> <br>
+    <button onclick="analisar()">Verificar financiamento</button>
+    <div id="result"></div>
+</body>
+
+</html>
+
+<script>
+    function analisar() {
+        var renda = Number(inp_renda.value)
+        var prestacao = Number(inp_prestacao.value)
+        var prestacao_pagar = (prestacao/renda)*100
+
+        result.innerHTML = ""
+        result.innerHTML = `A prestação corresponde a ${prestacao_pagar.toFixed(1)}% da renda familiar`
+        
+        if (prestacao_pagar > 30  ) {
+            result.innerHTML += '<div style="color: red">Será necessário complementar a renda familiar</div>'
+        }
+    }
+</script>

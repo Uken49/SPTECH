@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 10</title>
+</head>
+
+<body>
+    Nome da linha de ônibus: <input type="text" id="inp_viagem">
+
+    <button onclick="cadastrar()">Gravar buzão</button><br>
+
+    Linha que deseja ver: <input type="text" id="inp_consulta">
+    <button onclick="rever()">Pesquisar</button><br>
+
+    <div id="res"></div>
+</body>
+
+</html>
+
+<script>
+    var viagens = []
+
+    function cadastrar() {
+        viagens.push(inp_viagem.value.toLowerCase())
+    }
+
+    function rever() {
+        var tamanho = viagens.length
+        var consulta = inp_consulta.value.toLowerCase()
+        var posViagem = ""
+        var qtdViagem = 0
+
+        for (var contador = 0; contador < viagens.length; contador++ ) {
+            if (viagens[contador] == consulta) {
+                posViagem += `${contador+1}, `
+                qtdViagem++
+            }
+        }
+        
+        res.innerHTML = posViagem != ""  ? `Você já pegou essa linha ${qtdViagem} vezes, nessa ordem: ${posViagem}` : "Você nunca pegou essa linha"
+    }
+</script>

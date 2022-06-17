@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Bnaco 24h</h2>
+    <input type="text" placeholder="Informe o valor " id="in_valor">
+    <br>
+    <button onclick="calcular()">Solicitar saque </button>
+    <div id="div_resultados"></div>
+
+
+    </select>
+
+
+</body>
+
+</html>
+<script>
+    alert("notas disponíveis são de 10, 50 e 100 Reais. ")
+
+    var valor = Number(1000)
+    function calcular() {
+
+        var saque = Number(in_valor.value)
+
+
+        if (saque <= 0) {
+            alert("Não é possível sacar 0 ou menos, dãaaa!")
+        } if (saque <= valor) {
+            if (saque % 50 == 0 || saque % 10 == 0 || saque % 100 == 0) {
+                div_resultados.innerHTML = 'Retire o dinheiro no local indicado'
+            }
+            else {
+                div_resultados.innerHTML = 'Valor não possível devido às notas disponíveis'
+            }
+        } else { div_resultados.innerHTML = 'Valor solicitado maior que o disponível na máquina' }
+        valor = valor - saque
+    }
+
+
+</script>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 10</title>
+</head>
+<body>
+    Diga o nome da empresa: <input type="text" id="inp_empresa"> <br>
+    Diga o valor da bolsa: <input type="text" id="inp_bolsa"> <br>
+    Diga o valor do VR: <input type="text" id="inp_vr"> <br>
+    Tempo de deslocamento da empresa até a faculdade (minutos): <input type="text" id="inp_distancia"> <br>
+    <button onclick="analisar()">É preferida?</button>
+</body>
+</html>
+
+<script>
+    function analisar() {
+        var empresa = inp_empresa.value
+        var bolsa = Number(inp_bolsa.value)
+        var vr = Number(inp_vr.value)
+        var distancia = Number(inp_distancia.value)
+        var frase
+
+        if (bolsa >= 1800 || vr >= 20 || distancia <= 30) {
+            frase = `A empresa ${empresa} é uma de suas preferências`
+        }else{
+            frase = `A empresa ${empresa} está fora da sua lista`
+        }
+
+        alert(frase)
+    }
+</script>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="img/site.webmanifest">
+    <script src="main.js"></script>
+    <title>Devil CryBaby</title>
+</head>
+
+<body onclick="blausSound()">
+    <audio id="player" loop autoplay="autoplay">
+        <source src="soundTrack.mp4" type="audio/mp3">
+    </audio>
+
+    <header>
+        <div class="container">
+            <div class="div_startGame">
+                <h1>Palavras Cruzadas</h1>
+                <button class="button" id="bt_start" onclick="start()">Começar o Jogo</button>
+                <button class="button" style="display: none;" id="bt_restart" onclick="restart()">Fazer o diabo
+                    chorar</button>
+                <button class="button" width="200px" id="bt_destroyGame" onclick="destroyGrid()">/Kit
+                    (Desistir)</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Modal informativo do status da resposta -->
+        <span id="div_verifiedAnswer"></span>
+
+        <section class="container">
+            <div id="div_game">
+                <article id="div_information">
+                    <h2>Intruções do Jogo</h2>
+                    <span>Clique em "Começar o Jogo" para iniciar uma partida</span>
+                    <span>
+                        Perguntas serão exibidas na parte inferior do quadro
+                        Insira a sua resposta na caixa de texto e clique em "Verificar" para conferir a sua
+                        resposta
+                    </span>
+                    <span>
+                        A partida acaba quando as 16 questões forem respondidas
+                    </span>
+
+                    <span>
+                        Insira o seu nome para o placar <input id="user_name" type="text">
+                    </span>
+                </article>
+
+                <div id="div_canvasCruzada"></div>
+
+                <article id="div_questions">
+                    <div>
+                        <span id="span_questionText"></span>
+                        <input type="text" id="input_answer" placeholder="Sua Reposta">
+                    </div>
+                    <button id="button_verify" onclick="verify()" class="button">Verificar</button>
+                </article>
+            </div>
+
+        </section>
+    </main>
+
+    <footer id="footer" class="container">
+        <span>Desenvolvido por:</span>
+        <span>Helder Davison Rodrigues Alvarenga RA: 03221027</span>
+        <span>1° ano SIS</span>
+    </footer>
+
+</body>
+
+
+</html>

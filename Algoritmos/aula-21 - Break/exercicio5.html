@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 5</title>
+    <!-- Exericico 3 da lista -->
+</head>
+
+<body>
+    <button onclick="testar()">Ver minha sorte</button>
+
+    <div id="res"></div>
+</body>
+
+</html>
+
+<script>
+    function testar() {
+        var sorteado = ""
+        var contador = 0
+        var img_amor = '<img src="https://img.freepik.com/vetores-gratis/coracao-3d-vermelho_177761-63.jpg?w=2000" style="width: 10%">'
+        var img_jogo = '<img src="https://img.myloview.com.br/adesivos/rainha-dos-clubes-de-baralho-de-cartas-400-8268477.jpg" style="width: 10%">'
+        var amor = 0
+        var jogo = 0
+        var sorteado = 0
+
+        res.innerHTML = ""
+        while (contador < 22) {
+            sorteado = parseInt(Math.random() * 2)
+            if (sorteado == 0) {
+                amor++
+                res.innerHTML += img_amor
+            } else {
+                res.innerHTML += img_jogo
+                jogo++
+            }
+
+            if (amor >= 11) {
+                break
+            }
+            if (jogo >= 11) {
+                break
+            }
+            contador++
+        }
+
+        if (jogo > amor) {
+            res.innerHTML += "<br>Você tem mais sorte no jogo"
+        } else {
+            res.innerHTML += "<br>Você tem mais sorte no amor"
+        }
+    }
+</script>

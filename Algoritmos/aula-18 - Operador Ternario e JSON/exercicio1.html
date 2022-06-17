@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1</title>
+</head>
+<body>
+    <input type="text" id="inp_sal" placeholder="Digite o salário" onkeyup="analise()"> <br>
+
+    <div> Você já pode morar sozinho: <span id="res1"></span> </div>
+    <div> Você já pode criar 1 filho: <span id="res2"></span> </div>
+    <div> Você já pode criar 2 filhos: <span id="res3"></span> </div>
+    <div> Você já pode ter e manter uma BMW: <span id="res4"></span> </div>
+</body>
+</html>
+
+<script>
+    function analise() {
+        var sal = Number(inp_sal.value)
+
+        var morar_so = sal > 2000 
+        var filho_1 = sal > 3000 
+        var filho_2 = sal > 5000 
+        var ter_bmw = sal > 6000 
+
+        res1.innerHTML = `${morar_so ? 'Sim' : 'Não'}`
+        res2.innerHTML = `${filho_1 ? 'Sim' : 'Não'}`
+        res3.innerHTML = `${filho_2 ? 'Sim' : 'Não'}`
+        res4.innerHTML = `${ter_bmw ? 'Sim' : 'Não'}`
+    }
+</script>

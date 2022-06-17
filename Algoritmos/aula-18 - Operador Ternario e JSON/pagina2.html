@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 2 - Variável boleana </title>
+</head>
+<body>
+    <h2>Análise da idade</h2>
+
+    <input type="text" placeholder="Sua idade" id="inp_idade" onkeyup="analisar()">
+    
+    <div id="div_analise"></div>
+</body>
+</html>
+
+<script>
+    function analisar() {
+        var idade = Number(inp_idade.value)
+
+        // Variável do tipo boleano (ou lógico)
+        var pode_votar = idade >= 16
+        var pode_aposentar = idade >= 60
+        var pode_dirigir = idade >= 18
+        
+        if (pode_votar) {
+            div_analise.innerHTML = 'Já pode votar'
+        }
+        if (pode_aposentar) {
+            div_analise.innerHTML += '<br>Já pode aposentar'
+        }
+        if (pode_dirigir) {
+            div_analise.innerHTML += '<br>Já pode dirigir'
+        }
+    }
+</script>

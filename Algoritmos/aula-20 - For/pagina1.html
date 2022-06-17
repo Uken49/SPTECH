@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 1 - For</title>
+</head>
+
+<body>
+    <h3>Repetições</h3>
+
+    <button onclick="repetir4x()">Repetir 4x</button>
+    <input placeholder="Quantas repetições" id="in_quantidade">
+    <button onclick="repetir()">Repetir N vezes</button>
+    <br>
+    <div id="div_repeticoes"></div>
+
+</body>
+
+</html>
+
+<script>
+    function repetir4x() {
+        div_repeticoes.innerHTML = ''
+
+        for (var exibicoes = 0; exibicoes < 4; exibicoes++) { // Um laço de repetição com a mesma funcionalidade do while
+            div_repeticoes.innerHTML += 'Repito porque sei! <br>'
+        }
+    }
+
+    function repetir() {
+        div_repeticoes.innerHTML = ''
+        var limite = Number(in_quantidade.value)
+
+        for (var exibicoes = 0; exibicoes < limite ; exibicoes++) {
+            div_repeticoes.innerHTML += 'Eu domino minhas repetições!<br>'
+        }
+    }
+
+</script>

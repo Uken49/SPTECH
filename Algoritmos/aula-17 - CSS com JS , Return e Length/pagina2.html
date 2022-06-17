@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 2 - Return</title>
+</head>
+
+<body>
+    Voto 1:<input id="inp_voto1" onkeyup="analisar()"><br>
+    Voto 2:<input id="inp_voto2" onkeyup="analisar()"><br>
+    <div id="barra1" style="background-color: green; width: 0; height: 50px;"></div>
+    <div id="barra2" style="background-color: blue; width: 0; height: 50px;"></div>
+</body>
+
+</html>
+
+<script>
+    function analisar() {
+        var voto1 = Number(inp_voto1.value)
+        var voto2 = Number(inp_voto2.value)
+
+        if ((voto1 + voto2) > 200) {
+            alert('A quantidade de votos ultrapassa 200')
+
+            // Acaba com a função inteira, o que veem depois não é executado
+            return
+        }
+        wid_barra1 = voto1 * 2
+        wid_barra2 = voto2 * 2
+
+        barra1.style.width = `${wid_barra1}px`
+        barra2.style.width = `${wid_barra2}px`
+    }
+</script>

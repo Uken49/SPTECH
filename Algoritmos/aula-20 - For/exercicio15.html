@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 15</title>
+</head>
+
+<body>
+    <button onclick="contagem()">Números lokos</button>
+    <div id="res"></div>
+</body>
+
+</html>
+
+<script>
+    function contagem() {
+        var limite = 100
+       
+
+        for (var contador = 1; imite >= contador; contador++) {
+            var multiplo5 = contador % 5 == 0 ? false : true
+            var multiplo3 = contador % 3 == 0 ? false : true
+
+            var texto = ""
+
+            if (multiplo5 && multiplo3) {
+                texto += contador
+            } else {
+                if (multiplo5) {
+                    texto += 'Bom'
+                }
+                if (multiplo3) {
+                    texto += 'Deu'
+                }
+            }
+            res.innerHTML += `${texto}<br>`
+        }
+    }
+</script>

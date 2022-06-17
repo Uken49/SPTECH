@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2</title>
+</head>
+<body>
+    <h2>Tinder</h2>
+    Cor de cabelo:
+    <select id="sel_cabelo">
+        <option value="preto">Preto</option>
+        <option value="vermelho">Vermelho</option>
+        <option value="amarelo">Amarelo</option>
+        <option value="castanho">Castanho</option>
+    </select><br>
+
+    Altura da moça(em cm): <input type="text" id="inp_altura"><br>
+    <button onclick="match()">Deu match?</button> <br>
+    <img id="res_img" src="" style="height: 200px;">
+</body>
+</html>
+
+<script>
+    function match() {
+        var cabelo = sel_cabelo.value
+        var altura = Number(inp_altura.value)
+        var image
+
+        if ((cabelo == 'preto' || cabelo == 'vermelho') && altura >= 170) {
+            image = 'https://thumbs.dreamstime.com/b/indiv%C3%ADduo-dentro-do-carro-que-mostra-o-polegar-acima-97249874.jpg'    
+        }else{
+            image = 'https://cleofas.com.br/wp-content/uploads/2015/12/pessoatriste.jpg'    
+        }
+
+        res_img.src = image
+    }
+</script>

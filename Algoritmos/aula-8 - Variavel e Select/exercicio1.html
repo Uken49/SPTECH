@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1</title>
+</head>
+<body>
+    <select id="sel_fruta">
+        <option value="Fruta vermelha, interior branco e com sementes">Maçã</option>
+        <option value="Verde ou roxa, nasce em cacho">Uva</option>
+        <option value="Verde e com corpo violão">Pera</option>
+        <option value="Fruta vermelha e azedinha">Morango</option>
+        <option value="Amarela e espinha, tem uma 'coroa' verde">Abacaxi</option>
+    </select> <br>
+    <button onclick="descrever_fruta()">Descrever Fruta</button>
+</body>
+</html>
+
+<script>
+    function descrever_fruta() {
+        alert(`${sel_fruta.value}`)
+    }
+</script>

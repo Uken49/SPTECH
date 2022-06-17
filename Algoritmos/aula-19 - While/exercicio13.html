@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="PT">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 13</title>
+</head>
+<body>
+    Quantidade de caixas de bombons da Lindt: <input id="inp_caixa"> <br>
+    Preço de uma caixa de bombons da Lindt: <input id="inp_preco"> <br>
+
+    <button onclick="calcular()">Calcular e exibir cholocates</button>
+
+    <div id="res"></div>
+</body>
+</html>
+
+<script>
+    function calcular(){
+        var caixa = Number(inp_caixa.value)
+        var preco = Number(inp_preco.value)
+        var comanda = caixa*preco
+
+        res.innerHTML = ''
+
+        var contador = 0
+        var execesso = 0
+
+        while (contador < caixa) {
+            if (execesso == 5) {
+                res.innerHTML += '<img src="https://s2.glbimg.com/rwF9Rn0fngdCScjcEahV7OVEHzs=/620x480/top/e.glbimg.com/og/ed/f/original/2019/12/06/whatsapp_image_2019-12-06_at_15.48.06.jpeg" style="width: 10%;">'
+                execesso = 0
+            }else{
+                execesso++
+            }
+
+            res.innerHTML += '<img src="https://http2.mlstatic.com/D_NQ_NP_972822-MLB42051251729_062020-O.jpg" style="width: 10%;">'
+            contador++
+        }
+        res.innerHTML += `<br>Total a ser pago: R$${comanda.toFixed(2)}`
+    }
+</script>

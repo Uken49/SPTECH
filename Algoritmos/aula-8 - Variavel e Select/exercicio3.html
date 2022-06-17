@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 3</title>
+</head>
+
+<body>
+   <h3>Restaurante Baratie</h3>
+
+    Selecione a entrada:
+    <select id="sel_entrada">
+        <option value="0">Nenhuma</option>
+        <option value="10">Salada simples</option>
+        <option value="15">Torradas com patê</option>
+    </select> <br>
+
+    Selecione o prato principal:
+    <select id="sel_principal">
+        <option value="20">PF de frango</option>
+        <option value="35">PF de picanha</option>
+        <option value="40">PF vegano</option>
+    </select> <br>
+
+    Selecione a sobremessa:
+    <select id="sel_sobremessa">
+        <option value="0">Nenhuma</option>
+        <option value="2.50">Gelatina</option>
+        <option value="7.50">Salada de frutas</option>
+    </select> <br>
+
+    Digite seu nome:
+    <input type="text" id="inp_nome"> <br>
+
+    <button onclick="pagar()">Calcular o preço da refeição</button>
+    <div id="result"></div>
+</body>
+
+</html>
+
+<script>
+    function pagar() {
+        var nome = inp_nome.value
+        var entrada = Number(sel_entrada.value)
+        var principal = Number(sel_principal.value)
+        var sobremessa = Number(sel_sobremessa.value)
+        var custo = entrada + principal + sobremessa
+        result.innerHTML = `Olá ${nome}. Sua refeição vai custar R$${custo}`
+    }
+</script>

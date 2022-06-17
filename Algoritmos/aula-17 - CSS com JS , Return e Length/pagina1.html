@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 1 - CSS com JS</title>
+</head>
+
+<body>
+    <h2>Meta financeira</h2>
+
+    Quanto você já guardou? <input id="in_guardado" onkeyup="atualizar()">
+    <br><br>
+    Sua meta é de R$1.000,00. Veja a quanto você está dela:
+    <div id="div_barra" style="width: 0; height: 200px; background-color: aqua;"></div>
+</body>
+
+</html>
+
+<script>
+    var meta = 1000
+    function atualizar() {
+        var porcentagem_atual = Number(in_guardado.value) / meta
+        // considerando que 500px é quando a barra chega na meta
+        var largura_barra = 500 * porcentagem_atual
+
+        div_barra.style.width = `${largura_barra}px`
+
+        // Se a porcentagem for menor que 0.7 (70%), a cor de fundo deve ser vermelha. 
+        // Caso contrário, dever ser verde
+
+        var cor
+        if (porcentagem_atual < 0.7) {
+            cor = `red`
+        }else{
+            cor = `red`
+        }
+
+        // para recuperar ou alterar elementos de css, usamos camelCase no JS
+        div_barra.style.backgroundColor = cor
+    }
+</script>

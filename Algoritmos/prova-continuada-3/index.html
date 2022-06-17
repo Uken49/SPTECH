@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Interestelar</title>
+</head>
+
+<body>
+    <h1>Missão: Apolo Creed</h1>
+
+    <!-- Inputs -->
+    <div class="div-campos">
+        Diga o nome do astronauta: <input id="inp_nome" autofocus autocomplete><br>
+        Quantidade de dias: <input id="inp_dia"><br>
+        Quantidade de hora: <input id="inp_hora"><br>
+        Quantidade de minutos: <input id="inp_minuto"><br>
+        Tempo de permanência: <input id="inp_tempo"><br>
+    </div>
+
+    <!-- Botões -->
+    <div>
+        <button onclick="cadastrar()">Registrar viagem</button> <br>
+        <button onclick="relatorio()">Relatório de viagens</button> <br>
+        <div id="embarcando"></div>
+    </div>
+
+    <!-- Relátorio -->
+    <div id="div_relatorio"></div>
+
+</body>
+
+<script src="main.js"></script>
+
+</html>

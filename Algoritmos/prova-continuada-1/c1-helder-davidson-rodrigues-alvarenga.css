@@ -1,0 +1,11 @@
+.titulo{
+ color: purple;   
+}
+.entrada{
+    color: rgb(77, 56, 56);
+    font-family: monospace;
+    font-size: 15px;
+}
+.resultado-img{
+    width: 30%;
+}

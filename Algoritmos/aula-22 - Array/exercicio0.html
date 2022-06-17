@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1</title>
+</head>
+
+<body>
+    Digite o nome de um país que você viajou: <input type="text" id="in_viagem">
+
+    <button onclick="cadastrar()">Cadastrar</button><br>
+    <button onclick="rever()">Relatório</button><br>
+
+    <div id="res"></div>
+</body>
+
+</html>
+
+<script>
+    var viagens = []
+
+    function cadastrar() {
+        viagens.push(in_viagem.value)
+    }
+
+    function rever() {
+        var tamanho = viagens.length
+        var primeiro = viagens[0] == undefined ? 'Não cadastrado' : viagens[0]
+        var terceiro = viagens[2] == undefined ? 'Não cadastrado' : viagens[2]
+        var ultimo = tamanho == 0 ? 'Não cadastrado' : viagens[tamanho - 1]
+
+        res.innerHTML = `Você viajou para ${tamanho} países <br>
+                            1° país: ${primeiro} <br>
+                            3° país: ${terceiro} <br>
+                            Último país: ${ultimo}
+                        `
+    }
+</script>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 4</title>
+</head>
+<body>
+    Modo de pagamento:
+    <select id="sel_pagamento">
+        <option value="dinheiro">Dinheiro</option>
+        <option value="debito">Cartão de débito</option>
+            <option value="credito">Cartão de crédito</option>
+            <option value="boleto">Boleto</option>
+    </select> <br>
+    <button onclick="avaliar()">Analisar compra</button>
+</body>
+</html>
+
+<script>
+    function avaliar() {
+        var pagamento = sel_pagamento.value
+        var frase
+
+        if (pagamento == 'dinheiro' || pagamento == 'debito') {
+            frase = 'Você terá que pagar a vista'
+        }else{
+            frase = 'Pagamento poderá ser parcelado'
+        }
+
+        alert(frase)
+    }
+</script>

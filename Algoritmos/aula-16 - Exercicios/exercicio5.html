@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 5</title>
+</head>
+<body>
+    Digite a temperatura: <input type="text" id="inp_temp"> <br>    
+    Digite a umidade do ar: <input type="text" id="inp_umid"> <br>
+    <button onclick="avaliar()">Avaliar clima</button>
+
+    <div id="res"></div>
+</body>
+</html>
+
+<script>
+    function avaliar(){
+        var temp = Number(inp_temp.value)
+        var umid = Number(inp_umid.value)
+        var frase
+
+        if (umid < 0 || umid > 100) {
+            alert('Valor da umidade é inválido')
+            res.innerHTML = ''
+        }else{
+            if ((temp >= 22 && temp <= 24) && umid < 60) {
+                res.innerHTML = 'Clima agradável'
+            }else{
+                res.innerHTML = 'Clima desconfortável'
+            }
+        }
+    }
+</script>

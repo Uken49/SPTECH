@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1</title>
+</head>
+
+<body>
+    Número de linhas: <input type="number" onkeyup="soma()" autofocus id="inp_num">
+    Limite da soma: <input type="text" onkeyup="soma()" id="inp_limite">
+    <div id="res"></div>
+</body>
+
+</html>
+
+<script>
+    function soma() {
+        var num = Number(inp_num.value) + 1
+        var limite = Number(inp_limite.value)
+        var resSoma = 0
+
+        res.innerHTML = ''
+        for (var contador = 0; true; contador++) {
+            
+            resSoma += contador
+            if (resSoma > limite || contador >= num) {
+                break
+            }
+            res.innerHTML += `${contador} - ${resSoma}<br>`
+        }
+    }
+</script>

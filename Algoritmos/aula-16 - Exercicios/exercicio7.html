@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 7</title>
+</head>
+
+<body>
+    Insira sua nota: <input type="text" id="inp_nota"> <br>
+    Insira sua frequência: <input type="text" id="inp_freq"> <br>
+
+    <button onclick="analisar()">Analisar aluno</button>
+</body>
+
+</html>
+
+<script>
+    function analisar() {
+        var nota = Number(inp_nota.value)
+        var freq = Number(inp_freq.value)
+        var frase1
+        var frase2
+
+        if (nota < 0 || nota > 10) {
+            frase1 = 'Onde já se viu nota <0 ou >10?!'
+        } else {
+            if (freq < 0 || freq > 100) {
+                frase1 = 'Onde já se viu frequência <0 ou >100?!'
+            } else {
+                if (nota >= 0 && nota < 6) {
+                    frase1 = 'Aluno ficou abaixo da média'
+                } else {
+                    if (nota >= 6 && nota <= 8) {
+                        frase1 = 'Aluno ficou na média'
+                    } else {
+                        frase1 = 'Aluno acima da média'
+                    }
+                }
+            }
+        }
+
+        if (freq < 75 && frase1 == 'Onde já se viu nota <0 ou >10?!') {
+            frase1 = 'Aluno reprovado por frequência'
+        } else {
+            frase2 = 'Aluno aprovado por frequência'
+        }
+
+        alert(frase1)
+        alert(frase2)
+
+    }
+</script>

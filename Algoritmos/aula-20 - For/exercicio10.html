@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 10</title>
+</head>
+<body>
+    Insira quantidade de moedas de ouro: <input id="inp_ouro" onkeyup="contagem()">
+    <div id="res"></div>
+</body>
+</html>
+
+
+
+<script>
+    function contagem() {
+        var ouro = Number(inp_ouro.value)
+        
+        res.innerHTML = ""
+        for (var contador = 1; ouro >= contador; contador++) {
+            if (contador%10 == 1) {
+                res.innerHTML += '<div>'
+                }
+                res.innerHTML += '<img src="https://www.moedasantigas.com/wp-content/uploads/2020/07/moeda-ouro-24k.jpg" style="width: 10%;">'
+            if (contador%10 == 1) {
+                res.innerHTML += '</div>'
+            }
+        }
+    }
+</script>

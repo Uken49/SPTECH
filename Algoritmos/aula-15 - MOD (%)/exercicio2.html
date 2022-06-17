@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2</title>
+</head>
+
+<body>
+    <h2>Banco Maneiro - 24hrs</h2>
+    <div>Notas disponíveis são de 10, 50 e 100 reais.</div>
+
+    Quanto deseja sacar: <input type="text" id="inp_sacar">
+
+    <button onclick="sacar()">Solicitar saque</button>
+
+</body>
+
+</html>
+
+<script>
+    var maquina = 1000
+    var n100
+    var n50
+    var n10
+
+    function sacar() {
+        var valor = Number(inp_sacar.value)
+        var saque = 0
+
+        if (valor >= 0) {
+
+            if (valor > maquina) {
+                frase = "Valor solicitado maior que o disponível na máquina"
+            } else {
+                if (maquina % 100 == 0) {
+                    n100 = maquina / 100
+                }
+                if (maquina % 50 == 0) {
+                    n50 = maquina / 50
+                }
+                if (maquina % 10 == 0) {
+                    n10 = maquina / 10
+                }
+
+                if (valor%n100 == 0) {
+                    saque += (valor/n100)
+                }
+                if (valor%n50 == 0) {
+                    saque += (valor/n100) * 50
+                }
+                if (valor%n10 == 0) {
+                    saque += (valor/n100) * 10
+                }
+
+                if (saque < valor) {
+                    frase = "Valor não possível devido às notas disponíveis"
+                }else{
+                    frase = 'Retire o dinheiro no local indicado'
+                    maquina-= saque
+                }
+            }
+        } else {
+            frase = "Não é possível sacar 0 ou menos, dãaaa!"
+        }
+        alert(frase)
+    }
+</script>

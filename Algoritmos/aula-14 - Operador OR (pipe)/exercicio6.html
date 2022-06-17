@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 6</title>
+</head>
+
+<body>
+    <p id="p_frase">Você já clicou 0 vezes</p>
+    <button onclick="clicar()">Clique cabalístico</button>
+</body>
+
+</html>
+
+<script>
+    var qtdClique = 0
+    var frase
+    
+    function clicar() {
+        qtdClique++
+        
+        if (qtdClique == 3 || qtdClique == 4 || qtdClique == 7 || qtdClique == 10) {
+            frase = `Você clicou ${qtdClique} vezes e Juliana gosta desse número!`
+        }else{
+            frase = `Você já clicou ${qtdClique} vezes`
+        }
+        
+        p_frase.innerHTML = frase
+    }
+</script>

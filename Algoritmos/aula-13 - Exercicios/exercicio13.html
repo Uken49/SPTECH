@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 13</title>
+</head>
+<body>
+    Informe a quantidade de trabalho em anos: <input type="text" id="inp_trabalho"> <br>
+    Informe de trigo por hectare em kilos: <input type="text" id="inp_trigo"> <br>
+    Informe a quantidade de dias que faltou no trabalho: <input type="text" id="inp_falta"> <br>
+    <button onclick="analisar()">Deu match?</button> <br>
+    <img id="img_noiva" src="" style="display: none; width: 400px;">
+</body>
+</html>
+
+<script>
+    function analisar() {
+        var trabalho = Number(inp_trabalho.value)
+        var trigo = Number(inp_trigo.value)
+        var falta = Number(inp_falta.value)
+        var frase
+        var imagem
+        var imagemDisplay
+
+        if (trabalho >= 5 && trigo >= 300 && falta <= 5) {
+            frase = "Minha filha será sua!"
+            imagem = "https://asset1.zankyou.com/images/wervice-card-big/c95/9cb2/1050/800/w/22231/-/1571082575.jpg"
+        }else{
+            frase = "Deu ruim! Trabalhe mais 2 anos"
+            imagem = "https://i.ytimg.com/vi/blKs99QRPm4/mqdefault.jpg"
+        }
+        alert(frase)
+        img_noiva.src = imagem
+        img_noiva.style.display = "block"
+    }
+</script>

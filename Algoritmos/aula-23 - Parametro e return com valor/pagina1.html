@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 1 - Parâmetros pt1</title>
+</head>
+<body>
+    <button onclick="comprar(3)">Casquinha</button>
+    <button onclick="comprar(9.5)">Batata frita</button>
+    <button onclick="comprar(10)">Refrigerante 300ml</button>
+    <div>
+        Total compra: R$<b id="b_total">0.00</b>
+    </div>
+</body>
+</html>
+<script>
+    let total = 0
+
+    // O parâmetro da função está entre parenteses ()
+    // A função que tem parâmetro não precisa declarar a mesma váriavel
+    // O valor do parametro é dado o chamar a função
+    // Exemplo: comprar(200). O valor será 200
+    function comprar(valor) {
+        total += valor
+        b_total.innerHTML = total.toFixed(2)
+    }
+</script>

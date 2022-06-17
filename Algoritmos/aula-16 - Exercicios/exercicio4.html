@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 4</title>
+</head>
+<body>
+    Digite seu login: <input type="text" id="inp_login"> <br>
+    Insira a senha: <input type="text" id="inp_senha"> <br>
+    Diga a mensagem secreta: <input type="text" id="inp_info"> <br>
+    <button onclick="autenticar()">Autenticar</button>
+
+</body>
+</html>
+
+<script>
+    function autenticar() {
+        var login = inp_login.value
+        var senha = inp_senha.value
+        var info = inp_info.value
+        var frase
+
+        if (login == 'ana' && senha == 'braga' && (info == '1960' || info == 'louro josé' )) {
+            frase = 'Usuário autenticado'
+        }else{
+            frase = 'Falha na autenticação'
+        }
+
+        alert(frase)
+    }
+</script>

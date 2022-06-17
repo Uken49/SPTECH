@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2</title>
+</head>
+<body>
+    <h2>Selecione o item para compra</h2>
+    <select id="sel_cardapio">
+        <option value="3">Casquinha do Mc</option>
+        <option value="10.5">Batata frita</option>
+        <option value="13">Milk Shake</option>
+        <option value="6">Salada de frutas</option>
+    </select> <br>
+
+    <button onclick="comprar()">Comprar</button>
+
+    <p id="res">
+        Total de sua compra: R$ <span id="spa_comanda">0.00</span> - Extrato de compras:
+        <span id="res_historico"></span>
+    </p>
+</body>
+</html>
+
+<script>
+    var cardapio = Number(sel_cardapio.value)
+    var comanda = 0
+
+    function resultado() {
+        spa_comanda.innerHTML = comanda.toFixed(2)
+        res_historico.innerHTML += `<br>${cardapio.toFixed(2)}`
+
+    }
+
+    function comprar() {
+        cardapio = Number(sel_cardapio.value)
+        comanda += cardapio
+        resultado()
+    }
+</script>

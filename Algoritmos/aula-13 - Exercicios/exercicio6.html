@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 6</title>
+</head>
+<body>
+    Digite sua nota: <input type="text" id="inp_nota"> <br>
+    <button onclick="analisar()">Avaliar aluno</button>
+</body>
+</html>
+<script>
+    function analisar() {
+        var nota = Number(inp_nota.value)
+
+        if (nota < 6) {
+            alert("Aluno não aprovado!")
+        }else{
+            if (nota >= 8.5 && nota <= 10) {
+                alert("Aluno Exemplar!")
+            }
+            if (nota >= 6 && nota <= 8.5) {
+                alert("Aluno comum e aprovado!")
+            }
+        }
+        
+    }
+</script>

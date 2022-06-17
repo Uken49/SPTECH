@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 10</title>
+</head>
+
+<body>
+    <div id="div_insert">
+        <h2>Pilotos</h2>
+        Altura inicial <input id="inp_pilotoIni"> <br>
+        Altura final <input id="inp_pilotoFim"> <br>
+        <button onclick="piloto()">Selecionar</button> <br>
+    </div>
+
+    <div id="div_result" style="display: none;">
+        Digite seu nome: <input id="inp_nome"><br>
+        Digite sua altura: <input id="inp_altura"><br><br>
+
+        <button onclick="processo()">Avaliar candidato</button>
+        <div id="div_res_processo"></div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    var alturaIni = 0
+    var alturaFim = 0
+
+    function piloto() {
+        alturaIni = Number(inp_pilotoIni.value)
+        alturaFim = Number(inp_pilotoFim.value)
+
+        if (alturaIni >= alturaFim) {
+            alert("NÃO SEGUIR EM FRENTE")
+        }else{
+            if (alturaIni <= 1) {
+                alert("NÃO SEGUIR EM FRENTE")
+            }else{
+                div_insert.style.display = "none"
+                div_result.style.display = "block"
+            }
+        }   
+    }
+
+    function processo() {
+        var altura = Number(inp_altura.value)
+        var nome = inp_nome.value
+
+        if (altura >= alturaIni && altura <= alturaFim) {
+            div_res_processo.innerHTML += `O candidato ${nome} com altura de ${altura.toFixed(2)} participará do processo de seleção de piloto <br>`
+        } else {
+            div_res_processo.innerHTML += `Infelizmente o candidato ${nome} com altura de ${altura.toFixed(2)} não atende os requisitos <br>`
+        }
+    }
+</script>

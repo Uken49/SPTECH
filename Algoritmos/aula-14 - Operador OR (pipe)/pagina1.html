@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 1 - || (OU)</title>
+</head>
+<body>
+    <h2>Alerta de Temperatura</h2>
+
+    <input placeholder="Temperatura" id="in_temp">
+    <br>
+    <button onclick="alerta()">Vai emitir alerta?</button>
+</body>
+</html>
+
+<script>
+    function alerta() {
+        var temp = Number(in_temp.value)
+
+        /*
+            || -> "ou". Quando usamos ele, UM SALVA TODOS.
+            Ou seja, se 1 estiver true
+        */
+
+        if (temp < 15 || temp > 17) {
+            alert("ALERTA DE TEMPERATURA!")
+        }
+    }
+</script>

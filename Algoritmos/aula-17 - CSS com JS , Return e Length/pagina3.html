@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 3 - Length, IndexOf e outras coisas</title>
+</head>
+
+<body>
+    <input placeholder="Digite uma frase" id="in_frase" onkeyup="analisar()">
+    <br>
+    <p id="p_analise"></p>
+</body>
+
+</html>
+
+<script>
+    function analisar() {
+        var frase = in_frase.value
+
+        // Pegando a quantidade de caracteres da palavra
+        var caracteres = frase.length
+
+        p_analise.innerHTML = `A frase tem
+            <br> ${caracteres} caracteres <br>
+            A 1°letra ${frase[0]} <br>
+            A 4°letra ${frase[3]} <br>
+            A última letra é ${frase[caracteres - 1]} <br>
+        `       // Pegando a letra na posição entre []
+
+
+        // Tem a letra 'x' num texto?
+        // .indexOf() pega a 1° posição onde encontra o caracter
+        if (frase.indexOf('x') > -1) { // ou >= 0
+            p_analise.innerHTML += `Tem a letra "x" na posição ${frase.indexOf('x')} <br>`
+        }
+
+        // .toUpperCase() converte o texto em caixa ALTA
+        // .toLowerCase() converte o texto em caixa baixa
+        p_analise.innerHTML += `
+            Em caixa ALTA fica: ${frase.toUpperCase()} <br>
+            Em caixa baixa fica: ${frase.toLowerCase()} <br>
+        `
+        // tem a letra 'b' ou 'B'?
+        if (frase.toLowerCase().indexOf('b') > -1) {
+            p_analise.innerHTML += 'Tem a letra "b" ou "B"'
+        }
+
+        p_analise += `
+            São ${frase.trim().length} caracteres fora os espaçoes em branco no início 
+        ` // .trim() Remove os espaços antes da primeira letra e depois da última
+
+    }
+</script>

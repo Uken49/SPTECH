@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 8</title>
+</head>
+
+<body>
+    Digite um número entre 0 e 200: <input id="inp_numero"><br>
+    <button onclick="multiplicar()">Viva o 7</button>
+    <div id="res"></div>
+</body>
+
+</html>
+
+<script>
+    function multiplicar() {
+        res.innerHTML = ''
+
+        var numero = Number(inp_numero.value)
+        if (numero < 0 || numero > 200) {
+            return
+        }
+        
+        
+        for (var contador = 7; contador <= numero; contador++) {
+            if (contador%7 == 0) {
+                res.innerHTML += `${contador}<br>`
+            }
+        }
+    }
+</script>

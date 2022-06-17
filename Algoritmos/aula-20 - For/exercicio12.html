@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 05-05 q12</title>
+</head>
+<body>
+    <h3>Ursinhos</h3>
+
+    Qual o número? 
+    <select id="sel_numero" onchange="ursoPeludo()">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+    <br>
+    <p id="res"></p>
+</body>
+</html>
+<script>
+
+function ursoPeludo() {
+    res.innerHTML = ''
+
+    var ursos = Number(sel_numero.value)
+    var linha = 1
+
+    for (var contador = 0; contador < ursos; linha++) { // quantidade de ursos no geral
+        // este 2º while repete para a quantidade de ursos por linha
+        for (var exibidos_na_linha = 0; exibidos_na_linha < linha && contador < ursos; contador++) {
+            res.innerHTML += '<img src="https://images.uncyc.org/pt/thumb/b/b0/Ursinho_URSAL.jpg/150px-Ursinho_URSAL.jpg" style="width: 10%;">'
+            exibidos_na_linha++
+        }
+        res.innerHTML += '<br>'
+        exibidos_na_linha = 0
+    }
+
+}
+</script>

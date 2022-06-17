@@ -1,0 +1,53 @@
+<!-- 
+    a) Crie uma página HTML que simule uma calculadora que calcule a nota final de 3 provas e informe o resultado
+    do bimestre.
+    Nessa calculadora haverá 4 entradas, nome, nota 1, nota 2 e nota 3 sendo que as notas tem os respectivos
+    pesos 1, 3 e 6. Ao clicar no botão "Calcular nota", deverá ser mostrado na própria página a foto de um estudante
+    e do lado uma mensagem com o nome do aluno, a nota final do bimestre (com duas casas decimais) e embaixo da foto,
+    um botão para limpar o resultado.
+    Obs: Qualquer estilização com CSS deverá ser feita em outro arquivo referenciado.
+
+    b) Crie um diagrama de atividade baseado no programa, com algumas alterações. Leve em conta as seguintes
+    condições:
+    - Caso a nota digitada seja inferior a 0 ou maior que 10, repita a inserção da nota;
+    - Caso a nota final seja igual ou superior a 9.90, arredonde para 10;
+    - Caso a nota final seja igual ou inferior a 0.40, arredonde para 0;
+    - (Após o arredondamento) Caso a nota final seja maior que 5, diga aprovado, caso contrário, recuperação;
+ -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="c1-03221027-helder-davidson-rodrigues-alvarenga.css"> <!-- Chamando o css -->
+    <title>Prova - Versão 2</title>
+</head>
+<body>
+    <h1 class="titulo">Calculadora de média ponderada</h1>
+    <div class="entrada">
+        Digite seu nome: <input id="nome"><br>
+        Coloque a 1° nota <b>(peso 1)</b>: <input id="n1"><br>
+        Coloque a 2° nota <b>(peso 3)</b>: <input id="n2"><br>
+        Coloque a 3° nota <b>(peso 6)</b>: <input id="n3"><br>
+        <button onclick="calcular()">Calcular nota</button>
+    </div>
+
+    <div id="resultado"></div>
+</body>
+</html>
+
+<script>
+    function calcular() {
+        resultado.innerHTML = 
+        `<img class="resultado-img" src="https://www.mundobrink.com/blog/wp-content/uploads/2016/03/TDHA-750x410.jpg">
+        Olá <b>${nome.value}</b>, sua <u>nota final</u> é
+        ${((Number(n1.value) + Number(n2.value) * 3 + Number(n3.value) * 6) / 10).toFixed(2)}!<br>
+        <button onclick="limpar()">Limpar resultado</button>
+        `
+    }
+    (n1 + (n2 * 3) + (n3 * 6)) / 10
+    function limpar() {
+        resultado.innerHTML = ""
+    }
+</script>

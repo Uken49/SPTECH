@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 1 - Operador Ternário</title>
+</head>
+<body>
+    <h2>Análise da idade</h2>
+
+    <input type="text" placeholder="Sua idade" id="inp_idade" onkeyup="analisar()">
+    
+    <div id="div_analise"></div>
+</body>
+</html>
+
+<script>
+    function analisar() {
+        var idade = Number(inp_idade.value)
+        
+        /*
+            Aqui usamos o Operador Ternário (?:)
+            Antesa da ? é uma expressão lógica (ou boleana)
+            Se ela for true, o valor usado será o que vem logo após a ?
+            Se ela for false, o valor usado será o que vem após :
+        */
+
+        var frase = idade >= 16 ? 'Já pode votar<br>' : 'Ainda não vota!<br>'
+
+        /*
+            No código acima, se idade >= 16, a frase vai receber 'Já pode votar'
+            Caso contrário, a frase receberá 'Ainda não vota'
+        */
+
+        div_analise.innerHTML = frase
+        div_analise.innerHTML += `
+            <br> ${idade >=60 ? "Já pode se aposentar" : "Ainda não pode aposentar"}
+        `
+
+        // exibir uma 2° frase, abaixo da primeira que pode ser:
+        // "já pode se aposentar" (caso a idade for >=60)
+        // "ainda não pode aposentar" (caso a idade for < 60)
+    }
+</script>

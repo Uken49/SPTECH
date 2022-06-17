@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 1 - Array</title>
+</head>
+
+<body>
+    Cadastrar fruta: <input type="text" id="in_fruta">
+    <button onclick="cadastrar()">Cadastrar</button><br>
+
+    Consultar fruta de número: <input type="text" onkeyup="rever()" id="in_consulta">
+    <div id="div_fruta"></div>
+</body>
+
+</html>
+
+<script>
+    // Um vetor (ou array) é uma váriavel que recebe vários dados dentro
+    // Assim criamos um vetor vazio
+    var frutas = []
+
+    function cadastrar() {
+        // Aqui adicionamos um valor dentro do vetor, colocando na última posição
+        frutas.push(in_fruta.value)
+    }
+
+    function rever() {
+        var consulta = Number(in_consulta.value)
+        if (consulta >= 1 && consulta <= frutas.length) {
+            
+            var fruta_recuperada = frutas[consulta-1]
+            div_fruta.innerHTML = `A ${consulta}ª fruta cadastrada foi ${fruta_recuperada} <br>
+            <img src="https://i.pinimg.com/originals/d7/42/63/d742630eef18ab02ae7c0b3279a5706b.gif" alt="Piada de programação">`
+        }else{
+            div_fruta.innerHTML = `Fruta não encontrada <br>
+             <img src="https://i.gifer.com/P13U.gif" alt="Piada de programação">`
+        }
+    }
+</script>

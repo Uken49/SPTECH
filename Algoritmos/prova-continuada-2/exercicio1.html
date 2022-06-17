@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo dos 7 erros</title>
+</head>
+
+<body>
+
+    <input placeholder="Preço da gasolina" id="in_gasolina"> <br>
+    <input placeholder="Preço do álcool" id="in_alcool"> <br>
+    <select id="sel_convenio" onchange="calcular()">
+        <option value="0">Nenhum</option>
+        <option value="0.05">Convênio Prefeitura</option>
+        <option value="0.1">Cliente VIP</option>
+    </select>
+
+    <div id="div_frase1"></div>
+    <img id="img_combustivel">
+    <div id="div_frase2"></div>
+
+</body>
+
+</html>
+<script>
+    function calcular() {
+        var gasolina = Number(in_gasolina.value)
+        var alcool = Number(in_alcool.value)
+        var convenio = Number(sel_convenio.value)
+
+        var combustivel = ""
+        var cor = ""
+        var imagem = ""
+        if (alcool < gasolina * 0.7) {
+            combustivel = "álcool"
+            cor = "green"
+            imagem = "alcool.png"
+        } else {
+            combustivel = "gasolina"
+            cor = "black"
+            imagem = "gasolina.png"
+        }
+        div_frase1.innerHTML = `Vale mais a pena abastecer com ${combustivel} aqui`
+        div_frase1.style.color = cor
+        img_combustivel.src = imagem
+
+
+        var gasolina_com_desconto = gasolina-(gasolina * convenio)
+        var alcool_com_desconto = alcool-(alcool * convenio)
+        div_frase2.innerHTML = `Devido ao seu convênio, vai pagar R$${gasolina_com_desconto.toFixed(3)} na gasolina e R$${alcool_com_desconto.toFixed(3)} no álcool`
+
+    }
+</script>
+
+<!--
+    (3pts) Considerando os seguintes requisitos de um programa:
+
+    Crie um programa o qual ajuda o usuário a saber se compensa abastercer mais com álcool ou gasolina no posto:
+    a) Solicite o preço da gasolina e do álcool
+    b) O usuário informa se possui algum convênio para desconto com o posto numa combo, com as opções: Nenhum, Convênio Prefeitura, Cliente VIP
+    c) Ao alterar o valor na combo, o programa imediatamente exibe na tela uma frase que pode ser:
+        Vale mais a pena abastecer com álcool aqui (somente caso o valor do álcool for menos de 70% do valor da gasolina)
+        Vale mais a pena abastecer com gasolina aqui (caso o valor do álcool for 70% ou mais que o valor da gasolina)
+
+    d) No caso de se mais vantagem abastecer com álcool a frase deve estar na cor verde e abaixo da frase deve aparecer a foto de cana de açúcar.
+        No caso de ser mais vantagem abastecer com gasolina a frase deve estar na cor preta e abaixo da frase deve aparecer a foto de petróleo
+
+    e) Abaixo da frase e da imagem do item d) exiba uma frase como esta:
+        Devido ao seu convênio, vai pagar R$X na gasolina e R$Y no álcool
+    Onde X é o preço da gasolina e Y é o preço do álcool, ambos com 3 casas decimais. O desconto será de:
+        0% se o convênio for Nenhum
+        5% se o convênio for Convênio Prefeitura
+        10% se o convênio for Cliente VIP
+
+    E considerando que o código implementado foi o código abaixo o qual possui 7 erros que o impedem de eecutar o que foi solicitado, 
+    diga quais são os 7 erros. S não achar os 7, mas achar pelo menos 1, já ganha alguma pontuação. Por isso, se não achar os 7 erros, 
+    não precisa se desesperar, ok? Pode copiar e colar no VS code pra testar? Sim!
+-->
+

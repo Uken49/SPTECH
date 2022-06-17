@@ -1,0 +1,43 @@
+body {
+    padding: 0 2% 0 2%;
+}
+
+.header, .container-1, .container-2, .container-3, .container-4, .calculadora, .bibliografia {
+    display: grid;
+}
+
+.header {
+    justify-content: center;
+}
+
+.container-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20%, 2fr));
+    gap: 10px;
+    grid-auto-flow: dense;
+}
+
+.container-3 .item {
+    border: 1px solid;
+    padding: 0 20px;
+    grid-column-end: span 2;
+}
+
+.img-contexto {
+    width: 100%;
+}
+
+.calculadora {
+    margin: 1% 0px;
+}
+
+#resultado {
+    border: 1px solid;
+    margin: 1%;
+    padding: 20px 0 20px 20px;
+    width: fit-content;
+}
+
+#resultado>h3 {
+    margin: 0;
+}

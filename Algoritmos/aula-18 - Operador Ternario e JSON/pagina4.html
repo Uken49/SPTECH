@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 4 - parseInt()</title>
+</head>
+<body>
+    <h2>Número mais simples</h2>
+
+    <input placeholder="Digite um número" id="inp_numero" onkeyup="simplificar()">
+    <!-- Testar com casas decimais, ex: 1.22 9.5 45.33 -->
+    
+    <p id="p_numero"></p>
+</body>
+</html>
+
+<script>
+    function simplificar(){
+        /*
+        A função parseInt() tenta transformar algo em um número Inteiro.
+        Por isso, se necessário, ela TRUNCA (elimina) a parte decimal
+
+        */
+        var numero = parseInt(inp_numero.value)
+        p_numero.innerHTML = `O número simplificado é ${numero}`
+    }
+</script>

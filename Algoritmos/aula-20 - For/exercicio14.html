@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 14</title>
+</head>
+<body>
+    Quantos dias de musculação: <input id="inp_musc" onkeyup="analisar()"> <br>
+    <div id="res"></div>
+</body>
+</html>
+
+<script>
+    function analisar() {
+        res.innerHTML = "" 
+        
+        var limite = Number(inp_musc.value)
+        var img = '<img src="https://gooutside.com.br/wp-content/uploads/sites/3/2020/03/cardio-antes-ou-depois-da-musculacao.jpg" style="width: 10%;">' 
+
+        for (var contador = 0 ;contador < limite; contador++) {
+            if (contador != 89 && contador != 179 && contador != 364 && contador != 719 ) {
+                res.innerHTML += img
+            }
+            
+            if (contador == 89) {
+                var img_Torneado = '<img src="http://4.bp.blogspot.com/-ID0yQGNiw1w/UJlRAn50C1I/AAAAAAAAGUA/WgX8Z7nbKXI/s1600/ahomemsiliconado.jpg" style="width: 10%;">'
+                res.innerHTML += img_Torneado
+            }
+
+            if (contador == 179) {
+                var img_Forte = '<img src="https://i.pinimg.com/originals/09/07/87/090787c2dcb729a2d709cf182d5789c0.jpg" style="width: 10%;">'
+                res.innerHTML += img_Forte
+            }
+
+            if (contador == 364) {
+                var img_Muito_Forte = '<img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Leo_Stronda_Solo_WBFF.jpg" style="width: 10%;">'
+                res.innerHTML += img_Muito_Forte
+            }
+
+            if (contador == 719) {
+                var img_GOD = '<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4d0247f0-76f7-4616-ba75-a148b9d158e9/de32f17-b616ca53-62bc-41b1-b6c5-229665cf9624.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzRkMDI0N2YwLTc2ZjctNDYxNi1iYTc1LWExNDhiOWQxNThlOVwvZGUzMmYxNy1iNjE2Y2E1My02MmJjLTQxYjEtYjZjNS0yMjk2NjVjZjk2MjQuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.wNCYFPY8a8hvCcXpaevrJwtlNlSUHuR8qu60DrDUH0Y" style="width: 10%;">'
+                res.innerHTML += img_GOD
+            }
+        }
+    }
+</script>

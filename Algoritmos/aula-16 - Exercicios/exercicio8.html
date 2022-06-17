@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 8</title>
+</head>
+
+<body>
+    Digite seu login: <input type="text" id="inp_login"> <br>
+    Insira a senha: <input type="text" id="inp_senha"> <br>
+    Diga a mensagem secreta: <input type="text" id="inp_info"> <br>
+    <button onclick="autenticar()">Autenticar</button>
+    <div id="res"></div>
+</body>
+
+</html>
+
+<script>
+    var tentativa = 3
+
+    function autenticar() {
+        var login = inp_login.value
+        var senha = inp_senha.value
+        var info = inp_info.value
+        var frase
+
+        if (tentativa > 0) {
+            if (login == 'ana' && senha == 'braga' && (info == '1960' || info == 'louro josé')) {
+                frase = 'Usuário autenticado'
+                tentativa = 3
+                res.innerHTML = ''
+            } else {
+                frase = 'Falha na autenticação'
+                tentativa--
+                res.innerHTML = `Você ainda tem ${tentativa} tentativas`
+            }
+        }
+
+        if (tentativa == 0) {
+            res.innerHTML = 'Usuário BLOQUEADO! Procure seu gerente!'
+        } else {
+            alert(frase)
+        }
+
+    }
+</script>

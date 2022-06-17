@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 6</title>
+</head>
+
+<body>
+    Qual o tipo de arroz usado: <br>
+    <select id="sel_arroz">
+        <option value="integral">Integral</option>
+        <option value="branco">Branco</option>
+    </select>
+    <br>
+    Tempo de cozimento (minutos): <input type="text" id="inp_tempCozimento"> <br>
+    Quantidade de sal usado (gramas): <input type="text" id="inp_qtdSal"> <br>
+
+    <button onclick="avaliar()">Avaliar arroz</button>
+</body>
+
+</html>
+
+<script>
+    function avaliar() {
+        var arroz = sel_arroz.value
+        var tempo = Number(inp_tempCozimento.value)
+        var sal = Number(inp_qtdSal.value)
+        var frase
+
+        if (arroz == 'branco' && tempo == '10' && sal <= 10) {
+            frase = 'Arroz perfeito'
+        } else {
+            if (arroz == 'integral' && tempo == '20' && sal >= 0 || sal <= 15) {
+                frase = 'Arroz perfeito'
+            }else{
+                frase = 'Seu arroz não está perfeito'
+            }
+        }
+
+        alert(frase)
+    }
+</script>

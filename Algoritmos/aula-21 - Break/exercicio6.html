@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 6</title>
+    <!-- Exericico 4 da lista -->
+</head>
+
+<body>
+    <select id="sel_editora">
+        <option value="marvel">Marvel</option>
+        <option value="dc">DC</option>
+    </select>
+    <button onclick="testar()">Ver programação semanal na TV</button>
+
+    <div id="res"></div>
+</body>
+
+</html>
+
+<script>
+    function testar() {
+        var opcao = sel_editora.value
+        var contador = 0
+
+        res.innerHTML = ""
+        while (contador < 6) {
+            sorteado = parseInt(Math.random() * 10)
+
+            if (opcao == "marvel" && sorteado <= 6) {
+                res.innerHTML += `Você verá um filme que gosta no ${contador+1}º dia`
+                break
+            } else {
+                if (opcao == "dc" && sorteado >= 7) {
+                    res.innerHTML += `Você verá um filme que gosta no ${contador+1}º dia`
+                    break
+                }
+            }
+            contador++
+            if (contador >= 6) {
+                res.innerHTML += "É, ou lê um livro ou assiste um filme que não gosta mesmo"
+            }
+        }
+
+    }
+</script>

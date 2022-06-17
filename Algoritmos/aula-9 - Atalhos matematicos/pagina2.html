@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 2 - Variável Global</title>
+</head>
+<body>
+    <h3>Página 2 - Variável Global</h3>
+    <div>
+        Seu saldo no cofrinho é <b id="b_saldo">0</b>
+    </div>
+    <br>
+    <button onclick="depositar10()">Depositar 10</button>
+    <button onclick="tirar5()">Retirar 5</button>
+</body>
+</html>
+<script>
+
+    // Quando criamos uma variável fora das funções
+    // ela é uma variável GLOBAL
+    // Ou seja, fica compartilhada entre todas as funções
+    // qualquer uma pode pegar ou alterar seu valor
+    var saldo = 0
+        
+    function depositar10() {
+        // quando criamos variáveis dentro de função
+        // criamos uma variável LOCAL
+        saldo += 10
+        b_saldo.innerHTML = saldo
+    }
+   
+    function tirar5() {
+        saldo -= 5
+        b_saldo.innerHTML = saldo
+    }
+</script>

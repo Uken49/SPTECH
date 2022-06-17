@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 1 - Break</title>
+</head>
+<body>
+    <button onclick="sortear()">Eu quero 10!</button>
+    <div id="div_sorteios"></div>
+</body>
+</html>
+<script>
+    function sortear() {
+        div_sorteios.innerHTML = ''
+        var sorteios = 0
+
+        while (true) { // A princípio isso é um loop infinito
+            sorteios++
+            var sorteado = parseInt(Math.random()*11)
+            div_sorteios.innerHTML += `${sorteado} <br>`
+
+            if (sorteado == 10) {
+                break // Esse comando encerra o laço de repetição e prossegue o código
+            }
+        }
+
+        div_sorteios.innerHTML += `Foram feitos ${sorteios} sorteios`
+    }
+</script>

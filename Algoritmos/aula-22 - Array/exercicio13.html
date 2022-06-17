@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 13</title>
+</head>
+
+<body>
+    <h2>Campanha do time</h2>
+    <select id="sel_time">
+        <option value="4">Indique o resultado</option>
+        <option value="3">Vitória</option>
+        <option value="1">Empate</option>
+        <option value="0">Derrota</option>
+    </select>
+
+    <button onclick="registrar()">Registrar jogo</button><br>
+
+    Indique qual jogo quer saber: <input type="text" id="inp_ver" onkeyup="verJogo()">
+
+    <div id="res"></div>
+    <div id="res2"></div>
+</body>
+
+</html>
+
+<script>
+    var texto
+    
+    // 0-Vitoria, 1-Empate, 2-Derrota, 3-Ponto, 4-Aproveitamento
+
+    var campanha = [0, 0, 0, 0, 0]
+
+    function registrar() {
+
+        var selecao = Number(sel_time.value)
+        if (selecao == 4) {
+            return
+        }
+
+        if (selecao == 3) {
+            campanha[0]++
+            resultado = "Ganhou"
+
+        } else if (selecao == 1) {
+            campanha[1]++
+            resultado = "Empatou"
+
+        } else if (selecao == 0) {
+            campanha[2]++
+            resultado = "Perdeu"
+        }
+
+        campanha[4] += selecao
+        campanha[5] = (campanha[4] / (campanha[0] * 3 + campanha[1] * 3 + campanha[2] * 3)) * 100
+        campanha.push(resultado)
+
+        texto = `O time teve: ${campanha[0]} vitórias, ${campanha[1]} empates. ${campanha[2]} derrotas<br>`
+        texto += `Pontuação total: ${campanha[4]} pontos<br>`
+        texto += `Aproveitamento: ${campanha[5]}%`
+
+        res.innerHTML = texto
+    }
+
+    function verJogo() {
+        var i = 5 + Number(inp_ver.value)
+        if (campanha[i] == undefined || i > campanha.length || i < 6) {
+            texto = `Não foi cadastrado um ${i-5}° jogo`
+        }else{
+            texto = `No ${i - 5}° jogo, o time ${campanha[i]} `
+        }
+
+        res2.innerHTML = texto
+    }
+
+</script>

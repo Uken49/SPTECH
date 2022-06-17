@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 9</title>
+</head>
+<body>
+    <!-- a) -->
+    Tipo de cargo de programador: 
+    <select id="sel_cargo">
+        <option value="1800">Estágiario</option>
+        <option value="2800">Dev Júnior</option>
+        <option value="6500">Dev Pleno</option>
+        <option value="11000">Dev Senior</option>
+    </select>
+    <br>
+    
+    <!-- b) -->
+    Insira o tempo em que trabalha no cargo (meses): <input type="text" id="inp_temp"> <br>
+
+    <!-- c) -->
+    Você tem filhos: <select id="sel_filho">
+        <option value="800">Sim</option>
+        <option value="0">Não</option>
+    </select>
+    <br>
+
+    <!-- d) -->
+    <button onclick="analisar()">Analisar ganhos</button>
+
+    <div id="res"></div>
+    <img id="res_img" style="display: none; width: 500px;"></img>
+</body>
+</html>
+
+<script>
+    function analisar() {
+        var meses = Number(inp_temp.value)
+        var bonus = Number(sel_filho.value)
+        var salario = sel_cargo.value
+        var resFrase
+        var resCor
+        var ganhos = 0
+
+        if (meses <= 0) {
+            resCor = 'red'
+            res_img.style.display = 'none'
+            resFrase = '<b>Informe pelo menos 1 mês</b>'
+        }else{
+            ganhos = salario*meses
+
+            ganhos += meses*bonus
+
+            if (meses >= 12) {
+                ganhos += 4000
+            }
+
+            if (ganhos < 16000) {
+                res_img.src = 'http://www.sinttelba.com.br/spn-painel/midias/imagens/noticias/1072_pobres.jpg'
+                resCor = 'purple'
+            }else{
+                if (ganhos >= 16000 && ganhos <= 90000 ) {
+                    res_img.src = 'http://s2.glbimg.com/jsaPuF7nO23vRxQkuJ_V3WgouKA=/e.glbimg.com/og/ed/f/original/2014/06/10/461777879.jpg'
+                    resCor = 'blue'
+                }else{
+                    res_img.src = 'https://www.idinheiro.com.br/wp-content/uploads/2021/01/Preciso-de-dinheiro-o-que-fazer.jpg'
+                    resCor = 'green'
+                }
+            }
+            resFrase = `Este programador, após ${meses} meses ganhou R$${ganhos.toFixed(2)}`
+            res_img.style.display = 'block'
+        }
+
+        res.style.color = resCor
+        res.innerHTML = resFrase
+    }
+</script>

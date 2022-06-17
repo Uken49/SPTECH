@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 4</title>
+</head>
+<body>
+    <input placeholder="Digite um número" id="inp_num">
+    <button onclick="contagem()">Contagem regressiva</button>
+    <div id="res"></div>
+</body>
+</html>
+
+<script>
+    function contagem() {
+        var limite = 0
+
+        res.innerHTML = ''
+        for (var contador = Number(inp_num.value); limite <= contador; contador--) {
+            res.innerHTML += `${contador}<br>`
+        }
+    }
+</script>

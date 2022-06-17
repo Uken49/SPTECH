@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 3 - Váriavel Objeto (JSON)</title>
+</head>
+<body>
+    <h2>Comparação de campanhas</h2>
+
+    <h3>País 1</h3>
+    <input placeholder="Medalhas de ouro" id="in_ouro1"> <br>
+    <input placeholder="Medalhas de prata" id="in_prata1"> <br>
+    <input placeholder="Medalhas de bronze" id="in_bronze1"> <br>
+
+    <h3>País 2</h3>
+    <input placeholder="Medalhas de ouro" id="in_ouro2"> <br>
+    <input placeholder="Medalhas de prata" id="in_prata2"> <br>
+    <input placeholder="Medalhas de bronze" id="in_bronze2"> <br>
+
+    <br> <button onclick="comparar()">Comparar</button>
+
+    <div id="res_paises"></div>
+</body>
+</html>
+
+<script>
+    /*
+        Abaixo, criamos 2 variáveis do tipo Objeto.
+        No caso específico de JS, chamamamos eles de JSON.
+        As propriedades de um JSON podem ser texto, número, boleano e até mesmo outro JSON
+    */
+    var pais1 = {
+        ouro: 0,
+        prata: 0,
+        bronze: 0,
+        pontuacao: 0
+    }
+
+    var pais2 = {
+        ouro: 0,
+        prata: 0,
+        bronze: 0,
+        pontuacao: 0
+    }
+
+    function comparar() {
+        // Atribuindo valor a propriedade "ouro" do objeto "pais"
+        pais1.ouro = Number(in_ouro1.value)
+        pais1.prata = Number(in_prata1.value)
+        pais1.bronze = Number(in_bronze1.value)
+
+        pais2.ouro = Number(in_ouro2.value)
+        pais2.prata = Number(in_prata2.value)
+        pais2.bronze = Number(in_bronze2.value)
+
+        // Ouro vale 100pts, Prata vale 10pts e Bronze 1pt
+        pais1.pontuacao = (pais1.ouro*100) + (pais1.prata*10) + (pais1.bronze*1)
+        pais2.pontuacao = (pais2.ouro*100) + (pais2.prata*10) + (pais2.bronze*1)
+
+        res_paises.innerHTML = `
+            <hr>
+            Ouro do pais 1: ${pais1.ouro} <br>
+            Prata do pais 1: ${pais1.prata} <br>
+            Bronze do pais 1: ${pais1.bronze} <br>
+            Pontuação do pais 1: ${pais1.pontuacao} <br>
+            <hr>
+            Ouro do pais 2: ${pais2.ouro} <br>
+            Prata do pais 2: ${pais2.prata} <br>
+            Bronze do pais 2: ${pais2.bronze} <br>
+            Pontuação do pais 2: ${pais2.pontuacao} <br>
+            <hr>
+        `
+    }
+</script>

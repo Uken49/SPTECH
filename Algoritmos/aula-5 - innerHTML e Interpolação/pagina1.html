@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 1 - Interpolação e concatenação</title>
+</head>
+<body>
+    <div>
+        <h1 style="color: purple;">Cadastro Loko</h1>
+        Digite seu nome: <input type="text" id="inp_Nome"> <br>
+        Digite sua idade: <input type="text" id="inp_Idade"> <br>
+        <button onclick="salvar()" >Salvar</button>
+    </div>
+</body>
+</html>
+
+<script>
+    function salvar() {
+        // Aqui nós usamos a técnica de INTERPOLAÇÃO, onde "juntamos" texto estático com partes dinâmicas
+        // OBS: Para fazer, é OBRIGATÓRIO o uso de crases (´´)
+        alert(`Cadastro de ${inp_Nome.value}, de ${inp_Idade.value} anos realizado`)
+        // Aqui nós usamos a técnica da CONCATENAÇÃO
+        alert("Cadastro de " +inp_Nome.value+", de "+inp_Idade.value+" anos realizado")
+    }
+</script>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 14</title>
+</head>
+
+<body>
+    <div id="div_insert">
+        <h2>Pilotos</h2>
+        Altura inicial <input id="inp_pilotoIni"> <br>
+        Altura final <input id="inp_pilotoFim"> <br>
+
+        <h2>Basqueteiros</h2>
+        Altura inicial <input id="inp_basqueteIni"> <br>
+        Altura final <input id="inp_basqueteFim"> <br>
+        
+        <button onclick="step2()">Selecionar</button> <br>
+    </div><br>
+
+
+    <div id="div_result" style="display: none;">
+        - Título: “Processo de Seleção de novos atletas”
+        <br>
+        - Subtítulo: Critério de Seleção de piloto – altura entre <span id="selecao_piloto"></span>
+        <br>
+        - Subtítulo: Critério de Seleção de jogador de basquete – altura entre <span id="selecao_basquete"></span>
+        <br>
+        Digite seu nome: <input type="text" id="inp_nome"><br>
+        Digite sua altura: <input type="text" id="inp_altura"><br><br>
+
+        <select id="sel_modalidade" onchange="processo()">
+            <option value="piloto">Piloto</option>
+            <option value="basquete">Jogador de Basquete</option>
+        </select>
+
+        <div id="div_res_processo"></div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    var iniSelPil
+    var fimSelPil
+
+    var iniSelBas
+    var fimSelBas
+
+    var pilotoF = 0
+    var basqueteF = 0
+
+    function piloto() {
+        var alturaIni = Number(inp_pilotoIni.value)
+        var alturaFim = Number(inp_pilotoFim.value)
+
+        if (alturaIni <= 1) {
+            pilotoF = 1
+        } else {
+            if (alturaFim <= alturaIni) {
+                pilotoF = 1
+            }else{
+                pilotoF = 0
+            }
+        }
+    }
+
+    function basquete() {
+        var alturaIni = Number(inp_basqueteIni.value)
+        var alturaFim = Number(inp_basqueteFim.value)
+
+        if (alturaIni <= 1) {
+            basqueteF = 1
+        } else {
+            if (alturaFim <= alturaIni) {
+                basqueteF = 1
+            }else{
+                basqueteF = 0
+            }
+        }
+    }
+
+    function step2() {
+
+        piloto()
+        basquete()
+
+        if (basqueteF == 0 && pilotoF == 0) {
+            selecionar()
+        }else{
+            alert('NÃO SEGUIR EM FRENTE')
+        }
+    }
+
+    function selecionar() {
+
+        iniSelPil = Number(inp_pilotoIni.value)
+        fimSelPil = Number(inp_pilotoFim.value)
+
+        iniSelBas = Number(inp_basqueteIni.value)
+        fimSelBas = Number(inp_basqueteFim.value)
+
+        div_insert.style.display = "none"
+        div_result.style.display = "block"
+        selecao_piloto.innerHTML = `${iniSelPil.toFixed(2)} até ${fimSelPil.toFixed(2)}`
+        selecao_basquete.innerHTML = `${iniSelBas.toFixed(2)} até ${fimSelBas.toFixed(2)}`
+    }
+
+    function processo() {
+        var vaga = sel_modalidade.value
+        var altura = Number(inp_altura.value)
+        var nome = inp_nome.value
+        if (vaga == 'piloto') {
+            if (altura >= iniSelPil && altura <= fimSelPil) {
+                div_res_processo.innerHTML = `O candidato ${nome} com altura de ${altura.toFixed(2)} participará do processo de seleção de piloto`
+            } else {
+                div_res_processo.innerHTML = `Infelizmente o candidato ${nome} com altura de ${altura.toFixed(2)} não atende os requisitos`
+            }
+        }
+
+        if (vaga == 'basquete') {
+            if (altura >= iniSelBas && altura <= fimSelBas) {
+                div_res_processo.innerHTML = `O candidato ${nome} com altura de ${altura.toFixed(2)} participará do processo de seleção de jogador de basquete`
+            } else {
+                div_res_processo.innerHTML = `Infelizmente o candidato ${nome} com altura de ${altura.toFixed(2)} não atende os requisitos`
+            }
+        }
+    }
+</script>

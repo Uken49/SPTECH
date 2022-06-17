@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 1 - While</title>
+</head>
+<body>
+    <h3>Repetições</h3>
+
+    <button onclick="repetir4x()">Repetir 4x</button>
+    <input placeholder="Quantas repetições" id="in_quantidade">
+    <button onclick="repetir()">Repetir N vezes</button>
+    <br>
+    <div id="div_repeticoes"></div>
+
+</body>
+</html>
+<script>
+    function repetir4x() {
+        var exibicoes = 0
+        div_repeticoes.innerHTML = '' // Limpando a div
+
+        /*
+            Aqui usamos uma estrutura de REPETIÇÃO. Usamos a 'while'.
+            Na 'while' usamos um teste lógico(igualzinho ao um "if"), porém ele executa até a condição ser "false"
+        */
+        while(exibicoes < 4){
+            div_repeticoes.innerHTML += 'É nóis no algoritmos<br>'
+            exibicoes++
+        }
+    }
+
+    function repetir(){
+        var limite = Number(in_quantidade.value)
+        var exibicoes = 0
+
+
+        div_repeticoes.innerHTML = ''
+
+        while(exibicoes < limite){
+            div_repeticoes.innerHTML += 'Eu domino minhas repetições!<br>'
+            exibicoes++
+        }
+    }
+</script>

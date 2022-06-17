@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 12</title>
+</head>
+
+<body>
+    Deseja comprar quantas passagens: <input type="text" id="inp_passagem"> <br>
+    <button onclick="comprar()">Comprar</button>
+</body>
+
+</html>
+
+<script>
+    function comprar() {
+        var passagem = Number(inp_passagem.value)
+        var precoPassagem
+
+        if (passagem >= 8 && passagem <= 50) {
+            if (passagem >= 8 && passagem <= 19) {
+                precoPassagem = (4.4*passagem)*0.97
+                alert(`Total a pagar R$${precoPassagem.toFixed(2)}`)
+                
+            } else {
+                if (passagem >= 20 && passagem <= 49) {
+                    precoPassagem = (4.4*passagem)*0.95
+                    alert(`Total a pagar R$${precoPassagem.toFixed(2)}`)
+                    
+                } else {
+                    precoPassagem = (4.4*passagem)*0.93
+                    if (passagem == 50) {
+                        alert(`Total a pagar R$${precoPassagem.toFixed(2)}`)
+                        
+                    }
+                }
+            }
+        } else {
+            alert('Quantidade inválida para o Fidelidade!')
+        }
+    }
+</script>

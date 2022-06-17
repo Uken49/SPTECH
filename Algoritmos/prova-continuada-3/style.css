@@ -1,0 +1,17 @@
+body{
+    width: 90%;
+    margin: auto;
+}
+
+h1{ text-align: center;}
+
+.div-campos{
+    margin: 0 0 20px 0;
+}
+
+#embarcando{
+    height: 10px;
+    width: 0;
+    transition: 3s;
+    background-color: green;
+}

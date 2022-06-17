@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 4</title>
+</head>
+
+<body>
+    Digite sua frequência: <input type="text" id="inp_frequencia"> <br>
+    <button onclick="analisar()">Analisar frequência</button> <br>
+    <img id="res" width="400px" src="">
+</body>
+
+</html>
+
+<script>
+    function analisar() {
+        var frequencia = Number(inp_frequencia.value)
+
+        if (frequencia < 50) {
+            res.src = `https://claudia.abril.com.br/wp-content/uploads/2020/01/turista-sendo-fotografada-1.jpg`
+        } else {
+            res.src = `https://st2.depositphotos.com/1752627/6892/i/600/depositphotos_68925511-stock-photo-schoolboy-doing-homework.jpg`
+        }
+    }
+</script>

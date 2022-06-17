@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2</title>
+</head>
+<body>
+    Digite sua renda: <input type="text" id="inp_renda"> <br>
+    Digite a renda total familiar: <input type="text" id="inp_renda_familiar"> <br>
+    <button onclick="analisar()">Verificar ajuda</button>
+</body>
+</html>
+<script>
+    function analisar() {
+        var renSolo = Number(inp_renda.value)
+        var renFami = Number(inp_renda_familiar.value)
+
+        if (renSolo <= 1050 && renFami <= 2100) {
+            alert("Você terá direito!")
+        } else {
+            alert("Você NÃO terá direito")
+        }
+        
+    }
+</script>
