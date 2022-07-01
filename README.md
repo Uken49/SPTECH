@@ -1,8 +1,8 @@
 # SPTECH-SIS
-SPTECH - Bacharelado em Sistemas da Informação - 1° Ano - 1° Semestre 2022 (data atualizada com o passar do tempo.)
+SPTECH - Bacharelado em Sistemas da Informação - 2° Semestre - 2022 (Informação atualizada com o passar do tempo.)
 
   ►Olá!! Eu me chamo Helder. Novamente venho aqui relatar os meus estudos, agora já na faculdade, estarei constantemente dando commit em projetos da instituição.<br>
-  ►Bacharelado em Sistemas da Informação, duração 4 anos (8 semestres)<br>
+  ►Bacharelado em Ciência da Computação, duração 4 anos (8 semestres)<br>
   ►Quando o TCC for realizado, criarei um repositório próprio ele e colocarei no lugar desta mensagem.
 <div>
  <h2> Entre em contato: </h2>
