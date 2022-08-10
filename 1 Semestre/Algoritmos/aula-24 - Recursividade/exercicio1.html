@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1</title>
+</head>
+
+<body>
+    <img id="img_blau" onclick="sumir(1)" style="cursor: pointer; height: 40vh;"
+        src="https://sm.ign.com/ign_br/screenshot/default/goku_trw2.jpg">
+</body>
+
+</html>
+
+<script>
+    function sumir(repeticoes) {
+        if (repeticoes > 0) {
+            repeticoes -= 0.1
+
+            img_blau.style.opacity = `${repeticoes}`
+
+            setTimeout(() => {
+                sumir(repeticoes)
+            }, 200)
+
+        } else {
+            return
+        }
+    }
+</script>

@@ -1,0 +1,21 @@
+.divA {
+    background-color: rgb(169, 85, 248);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 250px;
+    width: 100%;
+}
+
+.divB {
+    background-color: #ff59f7;
+    border: outset red 20px;
+    height: 100%;
+    width: 250px;
+}
+
+.divC {
+    background-color: aquamarine;
+    height: 88%;
+    width: 30%;
+}
