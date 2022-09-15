@@ -5,14 +5,21 @@ public class Operadores {
     public static void main(String[] args) {
 
         /*
-            == -> para comparaçoã de números
+            == -> para comparação de números
             != -> diferente
             < -> menor
             > -> maior
             <= -> menor ou igual
             >= -> menor ou igual
             ! -> para negar uma expressão
-         */
+
+            num1++
+            num1--
+            num1-=num2
+            num1+=num2
+        
+            Método para fazer potênciação -> Math.pow(x, y);
+        */
         
         Integer numero1 = 42,
                 numero2 = 20;
