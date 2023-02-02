@@ -1,0 +1,58 @@
+'apt update' - baixar as atualizações e informações dos pacotes 
+                de todas as fontes (repositórios) configurados
+
+'apt upgrade' - Instala atualizações disponíveis dos pacotes 
+                    instalados atualmente no sistema.
+'apt install [dependencia]' - Comando para se instalar alguma coisa
+--------------------------------------
+'sudo' - Executa o comando como "super usuário"
+
+'adduser [nome usuário]' - Cria um novo usuário
+ex: 'adduser usuario_legal'
+
+'userdel -r [nome usuário]' - Deleta o usuário (parâmetro '-r' opicional, remove o diretório)
+ex: 'userdel -r usuario_maneiro'
+
+'su [usuário]' - Troca de usuário
+ex: 'su usuario_legal'
+
+'groupadd [nome grupo]' - Cria um grupo
+ex: 'groupadd ubuntu'
+
+'usermod -aG [grupo] [usuário]' - Adiciona um usuário em um determinado grupo
+ex: 'usermod -aG sudo usuario_legal'
+--------------------------------------
+'chmod' - Muda as permissões
+    r = leitura
+    w = gravação
+    x = executar
+    g = grupo
+    u = usuário 
+    a = todos os usuários
+
+ex: 'chmod g+rw [arquivo/diretório]' adiciona permissão 'r' e 'w' para o grupo
+ex 2: 'chmod 777 arquivo.txt' - Permissão total para todos os usuário e grupos
+
+(dono)
+Owner|Group|Others
+ rwx | rwx | rwx
+--------------------------------------
+'gzip [arquivo]' - Comprime o arquivo
+ex: gzip arquivo.txt
+# O arquvio fica: arquivo.txt.gz
+
+ex2: gzip -d arquivo.txt.gz
+# Descomprimindo o arquivo: arquivo.txt
+--------------------------------------
+'kill -[sinal] [id do processo (PID)]' - Envia sinais para o processo (o sinal é o '-número')
+ex: 'kill -9 19070'
+# Aqui enviamos o sinal para matar o processo com PID 19070
+--------------------------------------
+'ccrypt [arquivo/diretório]' - criptografa o arquivo/diretório selecionado
+ex: ccrypt vridosx.txt
+--------------------------------------
+Arquivo para ver senha dos usuários (polemica)
+
+/etc/shadow
+
+as senhas ficam criptografadas =c

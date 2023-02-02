@@ -1,0 +1,7 @@
+# Para usar a GUI, é necessário ativar o protocolo RDP
+
+# Comando para instalar a interface gráfica
+sudo apt-get install xrdp lxde-core lxde tigervnc-standalone-server -y
+# Escolher gdm3
+
+# Para conectar se usa o 'Endereço IPv4 público' da máquina

@@ -1,0 +1,9 @@
+# O nmon serve para exibir informações sobre a máquina
+nmon -f -s 5 -c 10
+
+# -f : Grava a captura em um arquivo
+# -s [tempo] : Indica o intervalo da captura 
+# -c [quantidade] : Indica a quantidade que será capturado
+-------------------------
+'wget [url]': Instala a partir da url fornecida
+ex: 'wget https://raw.githubusercontent.com/MarcioIoT/NmonVisualizer/main/NMONVisualizer.jar'

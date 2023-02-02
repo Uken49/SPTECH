@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="HospitalTest" time="0.14" tests="24" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="sun.desktop" value="gnome"/>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="java.specification.version" value="11"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="jdk.extensions.version" value="11.0.11.0"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/aluno/NetBeansProjects/atividade-04-hospital/target/test-classes:/home/aluno/NetBeansProjects/atividade-04-hospital/target/classes:/home/aluno/.m2/repository/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar:/home/aluno/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.6.0/junit-jupiter-api-5.6.0.jar:/home/aluno/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/aluno/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/aluno/.m2/repository/org/junit/platform/junit-platform-commons/1.6.0/junit-platform-commons-1.6.0.jar:/home/aluno/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.6.0/junit-jupiter-params-5.6.0.jar:/home/aluno/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.6.0/junit-jupiter-engine-5.6.0.jar:/home/aluno/.m2/repository/org/junit/platform/junit-platform-engine/1.6.0/junit-platform-engine-1.6.0.jar:"/>
+    <property name="java.vm.vendor" value="Eclipse OpenJ9"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="com.ibm.vm.bitmode" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="com.ibm.oti.vm.library.version" value="29"/>
+    <property name="java.vendor.url" value="https://adoptopenjdk.net/"/>
+    <property name="user.timezone" value=""/>
+    <property name="java.vm.specification.version" value="11"/>
+    <property name="os.name" value="Linux"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="BR"/>
+    <property name="sun.boot.library.path" value="/home/aluno/.sdkman/candidates/java/11.0.11.j9-adpt/lib/default:/home/aluno/.sdkman/candidates/java/11.0.11.j9-adpt/lib"/>
+    <property name="sun.java.command" value="/home/aluno/NetBeansProjects/atividade-04-hospital/target/surefire/surefirebooter12757650810203736209.jar /home/aluno/NetBeansProjects/atividade-04-hospital/target/surefire 2022-10-05T14-13-05_098-jvmRun1 surefire96247717026358504tmp surefire_011342851994969348578tmp"/>
+    <property name="test" value="HospitalTest"/>
+    <property name="surefire.test.class.path" value="/home/aluno/NetBeansProjects/atividade-04-hospital/target/test-classes:/home/aluno/NetBeansProjects/atividade-04-hospital/target/classes:/home/aluno/.m2/repository/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar:/home/aluno/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.6.0/junit-jupiter-api-5.6.0.jar:/home/aluno/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/aluno/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/aluno/.m2/repository/org/junit/platform/junit-platform-commons/1.6.0/junit-platform-commons-1.6.0.jar:/home/aluno/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.6.0/junit-jupiter-params-5.6.0.jar:/home/aluno/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.6.0/junit-jupiter-engine-5.6.0.jar:/home/aluno/.m2/repository/org/junit/platform/junit-platform-engine/1.6.0/junit-platform-engine-1.6.0.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/aluno"/>
+    <property name="user.language" value="pt"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2021-04-20"/>
+    <property name="java.home" value="/home/aluno/.sdkman/candidates/java/11.0.11.j9-adpt"/>
+    <property name="ibm.signalhandling.rs" value="false"/>
+    <property name="jdk.extensions.name" value="Extensions for OpenJDK for Eclipse OpenJ9"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/home/aluno/NetBeansProjects/atividade-04-hospital"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.compiler" value="j9jit29"/>
+    <property name="com.ibm.util.extralibs.properties" value=""/>
+    <property name="sun.java.launcher.pid" value="6883"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="com.ibm.oti.configuration" value="scar"/>
+    <property name="java.awt.fonts" value=""/>
+    <property name="surefire.real.class.path" value="/home/aluno/NetBeansProjects/atividade-04-hospital/target/surefire/surefirebooter12757650810203736209.jar"/>
+    <property name="com.ibm.oti.shared.enabled" value="false"/>
+    <property name="com.ibm.oti.vm.bootstrap.library.path" value="/home/aluno/.sdkman/candidates/java/11.0.11.j9-adpt/lib/default:/home/aluno/.sdkman/candidates/java/11.0.11.j9-adpt/lib"/>
+    <property name="com.ibm.cpu.endian" value="little"/>
+    <property name="java.fullversion" value="11.0.11+9&#10;JRE 11 Linux amd64-64-Bit Compressed References 20210421_975 (JIT enabled, AOT enabled)&#10;OpenJ9   - b4cc246d9&#10;OMR      - 162e6f729&#10;JCL      - 7796c80419 based on jdk-11.0.11+9"/>
+    <property name="java.runtime.version" value="11.0.11+9"/>
+    <property name="user.name" value="aluno"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="5.13.0-25-generic"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="ibm.signalhandling.sigint" value="true"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Eclipse OpenJ9 VM"/>
+    <property name="java.vendor.version" value="AdoptOpenJDK-11.0.11+9"/>
+    <property name="ibm.signalhandling.sigchain" value="true"/>
+    <property name="maven.ext.class.path" value="/opt/netbeans/java/maven-nblib/netbeans-eventspy.jar"/>
+    <property name="localRepository" value="/home/aluno/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/AdoptOpenJDK/openjdk-support/issues"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="11.0.11"/>
+    <property name="com.ibm.system.agent.path" value="/home/aluno/.sdkman/candidates/java/11.0.11.j9-adpt/lib"/>
+    <property name="user.dir" value="/home/aluno/NetBeansProjects/atividade-04-hospital"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="os.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/home/aluno/.sdkman/candidates/java/11.0.11.j9-adpt/lib/default:/home/aluno/.sdkman/candidates/java/11.0.11.j9-adpt/lib:/usr/lib64:/usr/lib"/>
+    <property name="java.vm.info" value="JRE 11 Linux amd64-64-Bit Compressed References 20210421_975 (JIT enabled, AOT enabled)&#10;OpenJ9   - b4cc246d9&#10;OMR      - 162e6f729&#10;JCL      - 7796c80419 based on jdk-11.0.11+9"/>
+    <property name="java.vendor" value="AdoptOpenJDK"/>
+    <property name="java.vm.version" value="openj9-0.26.0"/>
+    <property name="com.ibm.jcl.checkClassPath" value=""/>
+    <property name="ibm.system.encoding" value="UTF-8"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="55.0"/>
+  </properties>
+  <testcase name="realizarPagamentoMedicoNuloSemExcecao" classname="HospitalTest" time="0.026"/>
+  <testcase name="realizarPagamentoMedicoNulo" classname="HospitalTest" time="0.003"/>
+  <testcase name="realizarPagamentoMedicoInativo" classname="HospitalTest" time="0.001"/>
+  <testcase name="construtorHospital" classname="HospitalTest" time="0.002"/>
+  <testcase name="realizarPagamentoHoraExtraMedicoNulo" classname="HospitalTest" time="0.001"/>
+  <testcase name="classeHospitalGettersESetters" classname="HospitalTest" time="0.025"/>
+  <testcase name="realizarPagamentoValorValido" classname="HospitalTest" time="0.002"/>
+  <testcase name="classeMedicoAtributosPrivados" classname="HospitalTest" time="0.006"/>
+  <testcase name="realizarPagamentoHoraExtraValorInvalido" classname="HospitalTest" time="0"/>
+  <testcase name="desligarMedicoInvalido" classname="HospitalTest" time="0.001"/>
+  <testcase name="realizarPagamentoHoraExtraNull" classname="HospitalTest" time="0.001"/>
+  <testcase name="realizarPagamentoHoraExtraNegativa" classname="HospitalTest" time="0.001"/>
+  <testcase name="realizarPagamentoHoraExtraMedicoNuloSemExcecao" classname="HospitalTest" time="0.003"/>
+  <testcase name="construtorMedico" classname="HospitalTest" time="0.002"/>
+  <testcase name="realizarPagamentoHoraExtraValorValido" classname="HospitalTest" time="0"/>
+  <testcase name="classeHospitalAtributosPrivados" classname="HospitalTest" time="0.002"/>
+  <testcase name="realizarPagamentoValorInvalido" classname="HospitalTest" time="0.001"/>
+  <testcase name="realizarPagamentoValorNulo" classname="HospitalTest" time="0.001"/>
+  <testcase name="realizarPagamentoHoraExtraMedicoInativo" classname="HospitalTest" time="0.001"/>
+  <testcase name="classeMedicoMetodosPublicos" classname="HospitalTest" time="0.002"/>
+  <testcase name="classeMedicoGettersESetters" classname="HospitalTest" time="0.003"/>
+  <testcase name="classeHospitalaMetodosPublicos" classname="HospitalTest" time="0.004"/>
+  <testcase name="desligarMedicoValido" classname="HospitalTest" time="0.002"/>
+  <testcase name="realizarPagamentoValorNuloSemExcecao" classname="HospitalTest" time="0.003"/>
+</testsuite>

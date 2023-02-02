@@ -1,47 +1,55 @@
-import platform # Bilioteca para saber o SO (Sistema Operacional)
+import platform # Biblioteca para saber o SO (Sistema Operacional)
+import sys
 import time # Para dar atraso nos comandos da aplicação
 import os # Para executar comandos no shell
 import psutil # Para captar dados de máquina
 import pymysql # Para conectar ao Banco de Dados
 import uuid as mac # Usei apenas para capturar o macAddress
-import datetime # Para pegar dados do tempo atual
+import distro # Captar a distribuição do Linux
 
 # Limpando console
 def limparShell(clearString):
     os.system(clearString)
 
-def cadastrarMaquina(MAC_ADDRESS, SERIAL_ID, USER):
+def cadastrarMaquina(
+    KERNEL, DIST_NOME, VERSAO, ROOTNAME, MAC_ADDRESS
+    , CPU_PERC, CPU_TEMP, CORE, DISCO_PERC, RAM_PERC
+    ):
     # Fazendo a chamada da Procedure
-    sql = f"CALL stg_cadastrarMaquina('{SERIAL_ID}', '{MAC_ADDRESS}', '{USER}');"
-    con.cursor().execute(sql)
+    print(f"CALL stg_cadastrarMaquina('{KERNEL}', '{DIST_NOME}', '{VERSAO}', '{ROOTNAME}', '{MAC_ADDRESS}', {CPU_PERC}, {CPU_TEMP}, '{CORE}', {DISCO_PERC}, {RAM_PERC})")
+    # sql = f"CALL stg_cadastrarMaquina('{KERNEL}', '{DIST_NOME}', '{VERSAO}', '{ROOTNAME}', '{MAC_ADDRESS}', {CPU_PERC}, {CPU_TEMP}, '{CORE}', {DISCO_PERC}, {RAM_PERC});"
 
+    con.cursor().execute(sql)
     con.commit()
 
-def cadastrarDadosMaquina(NUM_CORE, PERC_RAM, DISCO, MOMENTO, SERIAL_ID):
-    # Fazendo a chamada da Procedure
-    sql = f"CALL stg_cadastrarDadosMaquina({NUM_CORE}, {PERC_RAM}, {DISCO}, '{MOMENTO}', '{SERIAL_ID}');"
-    con.cursor().execute(sql)
+def captarTopologiaMaquina(DELAY):
+    KERNEL = platform.system()
+    DIST_NOME = distro.name()
+    VERSAO = distro.version()
+    ROOTNAME = os.getlogin() # Pegando o nome do usuário da máquina
+    MAC_ADDRESS = hex(mac.getnode()) # Pegando o MacAddress da máquina
 
-    con.commit()
+    captarDados(DELAY, KERNEL, MAC_ADDRESS, ROOTNAME)
 
 # Captar os dados da máquina com o atraso
-def captarDados(DELAY, MAC_ADDRESS, SERIAL_ID):
-    NUM_CORE = psutil.cpu_percent(1, True)
-    PERC_RAM = psutil.virtual_memory()[2]
-    DISCO = psutil.disk_usage('/')[3]
-    MOMENTO = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") # Pegando o dia/hora atual
+def captarDados(DELAY, KERNEL, MAC_ADDRESS, ROOTNAME):
+    CPU_PERC = '20.2'
+    CPU_TEMP = '20.1'
+    CORE = psutil.cpu_percent(1, True)
+    DISCO_PERC = psutil.disk_usage('/')[3]
+    RAM_PERC = psutil.virtual_memory()[2]
     
     numCore = 0
-    for core in NUM_CORE:
+    for core in CORE:
         print(f'Core {numCore}: {core}')
         numCore += 1
     
-    print(f'RAM: {PERC_RAM}\nDisco: {DISCO} \nMomento: {MOMENTO}\n')
+    print(f'RAM_PERC: {RAM_PERC}\nDISCO_PERC: {DISCO_PERC}')
 
-    cadastrarDadosMaquina(NUM_CORE, PERC_RAM, DISCO, MOMENTO, SERIAL_ID)
-    
+    cadastrarMaquina(KERNEL, DIST_NOME, VERSAO, ROOTNAME, MAC_ADDRESS, CPU_PERC, CPU_TEMP, CORE, DISCO_PERC, RAM_PERC)
+        
     time.sleep(DELAY)
-    captarDados(DELAY, MAC_ADDRESS, SERIAL_ID)
+    captarDados(DELAY, KERNEL, MAC_ADDRESS, ROOTNAME)
 
 # Definindo o comando para limpar o terminal com base no SO
 CLEAR_STRING = "cls" if platform.system() == "Windows" else "clear"
@@ -60,12 +68,6 @@ con = pymysql.connect(
     database=NOME_BANCO,
     cursorclass=pymysql.cursors.DictCursor)
 
-# Captando informações da máquina do usuário
-SERIAL_ID = "AE:20:30:00:10" # Pegando SerialID da placa mãe
-MAC_ADDRESS = hex(mac.getnode()) # Pegando o MacAddress da máquina
-USER = os.getlogin() # Pegando o nome do usuário da máquina
-DELAY = 1 # Atraso na captação dos dados
-
 print('''
     API - Monitoramento de Dados de Máquina
     
@@ -73,5 +75,6 @@ print('''
     Autor: Helder Davidson Rodrigues Alvarenga\n
 ''')
 
-cadastrarMaquina(MAC_ADDRESS, SERIAL_ID, USER)
-captarDados(DELAY, MAC_ADDRESS, SERIAL_ID)
+DELAY = 1 # Atraso na captação dos dados
+
+captarTopologiaMaquina(DELAY)

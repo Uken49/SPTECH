@@ -1,0 +1,13 @@
+'jobs': Lista os processos inicializados a partir do terminal
+
+'fg [numero]' - Move o processo em segundo plano para o primeiro, o parâmetro do comando é o número mostrado pelo comando 'jobs'
+ex: 'fg 2'
+
+'nice [opções] [comando]'-: Define o valor de ajuste da prioridade  para a execução de um comando. (Só utiliza-se uma vez)
+ex: 'nice -6 top'
+
+'renice [opções] [comando]'-: Redefine o valor da prioridade, após utilizar o renice
+ex: 'renice -20 top'
+
+'pstree [parametro (opcional)]'- : Exibe árvore de processos
+ex: pstree
