@@ -1,5 +1,5 @@
 # SPTECH-CCO
-SPTECH - Bacharelado em Ciência da Computação - 2° Semestre - 2022 (Informação atualizada com o passar do tempo.)
+SPTECH - Bacharelado em Ciência da Computação - 3° Semestre - 2023 (Informação atualizada com o passar do tempo.)
 
   ►Olá!! Eu me chamo Helder. Novamente venho aqui relatar os meus estudos, agora já na faculdade, estarei constantemente dando commit em projetos da instituição.<br>
   ►Bacharelado em Ciência da Computação, duração 4 anos (8 semestres)<br>
